@@ -1,0 +1,658 @@
+/* ==========================================================================
+   Wisata Agro Wonosari - Outbound Web Theme (Revised Modern Minimalist)
+   Theme: Perkebunan & Edukasi (Kebun Teh Wonosari, Lawang - Malang)
+   Colors: Leaf Green (#4CAF50), Dark Green (#2E7D32), Deep Forest (#1B3B2B), 
+           Soft Amber (#FFC107), Soft Green BG (#E8F5E9), Off-White (#F9F9F9)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-green: #4CAF50;
+  --dark-green: #2E7D32;
+  --deep-forest: #1B3B2B;
+  --light-green: #81C784;
+  --soft-green-bg: #E8F5E9;
+  --off-white: #F9F9F9;
+  --pure-white: #FFFFFF;
+  --accent-amber: #FFC107;
+  --dark-amber: #FFA000;
+  --text-dark: #212529;
+  --text-muted: #6C757D;
+  --card-shadow: 0 8px 24px rgba(46, 125, 50, 0.08);
+  --hover-shadow: 0 14px 32px rgba(46, 125, 50, 0.16);
+  --border-radius-lg: 16px;
+  --border-radius-sm: 10px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Prevent horizontal scroll / page shaking on mobile */
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--off-white);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-font {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+/* ==========================================================================
+   Scroll Reveal Animation
+   ========================================================================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.25, 0.8, 0.25, 1),
+              transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Navigation Bar (Sticky & Uniform Logo)
+   ========================================================================== */
+.navbar-custom {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba(76, 175, 80, 0.15);
+  transition: var(--transition);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+}
+
+/* Uniform Logo Size across ALL Pages */
+.navbar-brand {
+  font-weight: 800;
+  color: var(--deep-forest) !important;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-brand i {
+  color: var(--primary-green);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.navbar-brand .brand-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.navbar-brand .brand-sub {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.navbar-nav .nav-link {
+  color: var(--deep-forest) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px !important;
+  border-radius: 8px;
+  transition: var(--transition);
+  margin: 0 2px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #fff !important;
+  background-color: var(--dark-green);
+}
+
+/* Hamburger Toggler Aligned Far Right on Mobile */
+.navbar-toggler {
+  border: 2px solid var(--primary-green);
+  color: var(--dark-green);
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-left: auto; /* Pushes to far right edge */
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+  outline: none;
+}
+
+/* ==========================================================================
+   Hero Sections
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba(27, 59, 43, 0.9), rgba(46, 125, 50, 0.82)),
+              url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 100px 0 85px 0;
+  overflow: hidden;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+}
+
+.page-hero {
+  position: relative;
+  background: linear-gradient(135deg, rgba(27, 59, 43, 0.92), rgba(46, 125, 50, 0.85)),
+              url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 65px 0 55px 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Buttons & Badges
+   ========================================================================== */
+.btn-primary-custom {
+  background-color: var(--primary-green);
+  border: 2px solid var(--primary-green);
+  color: #fff !important;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 30px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(76, 175, 80, 0.28);
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(46, 125, 50, 0.38);
+}
+
+.btn-amber {
+  background-color: var(--accent-amber);
+  border: 2px solid var(--accent-amber);
+  color: var(--deep-forest) !important;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 30px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(255, 193, 7, 0.32);
+}
+
+.btn-amber:hover {
+  background-color: var(--dark-amber);
+  border-color: var(--dark-amber);
+  color: var(--deep-forest) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 160, 0, 0.42);
+}
+
+.btn-outline-custom {
+  border: 2px solid var(--primary-green);
+  color: var(--dark-green) !important;
+  background: transparent;
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: 30px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--primary-green);
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+.badge-amber {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #B78103;
+  border: 1px solid var(--accent-amber);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Cards (Feature / 6 Alasan / Package / Facility / Article)
+   ========================================================================== */
+.custom-card {
+  background: #fff;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(76, 175, 80, 0.15);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hover-shadow);
+  border-color: rgba(76, 175, 80, 0.35);
+}
+
+/* 6 Alasan Cards - Clean & Proportional Theme */
+.reason-card {
+  background: #fff;
+  border-radius: var(--border-radius-lg);
+  padding: 28px 22px;
+  border: 1px solid rgba(76, 175, 80, 0.16);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.reason-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--primary-green);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--soft-green-bg) 100%);
+}
+
+.reason-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--soft-green-bg);
+  color: var(--dark-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  transition: var(--transition);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.reason-card:hover .reason-icon-box {
+  background: var(--dark-green);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Package Card Proportional Image Styling */
+.package-card-img {
+  width: 100%;
+  height: 210px; /* Standard proportional height */
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.custom-card:hover .package-card-img {
+  transform: scale(1.04);
+}
+
+/* Facility Card with Hover Animation */
+.facility-card {
+  background: #fff;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(76, 175, 80, 0.15);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--primary-green);
+}
+
+.facility-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.facility-card:hover .facility-card-img {
+  transform: scale(1.06);
+}
+
+/* Visi & Misi Compact Cards */
+.visi-misi-card {
+  background: #fff;
+  border-radius: var(--border-radius-lg);
+  padding: 24px 20px; /* Compact padding */
+  border: 1px solid rgba(76, 175, 80, 0.18);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.visi-misi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--hover-shadow);
+}
+
+.visi-misi-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.visi-misi-card p, .visi-misi-card li {
+  font-size: 0.92rem; /* Adjusted readable text size */
+  line-height: 1.6;
+}
+
+/* Article Card */
+.article-card-img {
+  height: 195px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.article-meta {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.article-meta i {
+  color: var(--primary-green);
+}
+
+/* Modal / Detail Popup Styling */
+.modal-content-custom {
+  border-radius: var(--border-radius-lg);
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header-custom {
+  background: var(--deep-forest);
+  color: #fff;
+  padding: 18px 24px;
+  border: none;
+}
+
+.facility-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.facility-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+}
+
+.facility-list li i {
+  color: var(--primary-green);
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   Floating Action Buttons (WhatsApp + Back To Top)
+   ========================================================================== */
+.floating-widget-group, .floating-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.floating-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  transition: var(--transition);
+  text-decoration: none;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+.floating-btn:hover {
+  transform: scale(1.12);
+  color: #fff !important;
+}
+
+.floating-btn-wa, .btn-wa {
+  background-color: #25D366;
+}
+
+.floating-btn-wa::before, .btn-wa::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: waPulse 2s infinite ease-out;
+}
+
+@keyframes waPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.floating-btn-top, .btn-top {
+  background-color: var(--dark-green);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+}
+
+.floating-btn-top.show, .btn-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-tooltip, .floating-label {
+  position: absolute;
+  right: 64px;
+  background: rgba(27, 59, 43, 0.92);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.floating-btn:hover .floating-tooltip,
+.floating-btn:hover .floating-label {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Footer (Consistent Deep Forest Brand Theme Across All Pages)
+   ========================================================================== */
+.footer-custom {
+  background-color: var(--deep-forest) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  padding: 65px 0 25px 0;
+  font-size: 0.92rem;
+}
+
+.footer-brand {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-brand i {
+  color: var(--primary-green);
+}
+
+.footer-custom h5, .footer-custom h6 {
+  color: var(--accent-amber) !important;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-custom a, .footer-links a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.footer-custom a:hover, .footer-links a:hover {
+  color: var(--accent-amber) !important;
+  transform: translateX(4px);
+}
+
+.social-links a, .footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  margin-right: 8px;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.social-links a:hover, .footer-social a:hover {
+  background: var(--primary-green);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 22px;
+  margin-top: 45px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Responsive Mobile Optimization (Comfortable View & Spacing)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 12px;
+    border: 1px solid var(--soft-green-bg);
+  }
+  .navbar-nav .nav-link {
+    padding: 10px 16px !important;
+    margin: 3px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section { padding: 70px 0 55px 0; min-height: auto; }
+  .page-hero { padding: 45px 0 35px; }
+  .page-hero h1 { font-size: 1.7rem; }
+  .page-hero p { font-size: 0.93rem; }
+  .floating-widget-group, .floating-container { bottom: 18px; right: 18px; gap: 10px; }
+  .floating-btn { width: 46px; height: 46px; font-size: 1.2rem; }
+  .reason-card { padding: 22px 16px; }
+  .package-card-img, .facility-card-img { height: 185px; }
+  .modal-dialog { margin: 12px; }
+  /* Article sidebar moves below on mobile */
+  .article-sidebar-col { order: 2; }
+  .article-content-col { order: 1; }
+  /* General section spacing mobile */
+  section.py-5 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  .display-4 { font-size: 1.9rem !important; }
+  .display-5 { font-size: 1.6rem !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-section { padding: 55px 0 45px; }
+  .page-hero h1 { font-size: 1.45rem; }
+  .page-hero p { font-size: 0.88rem; }
+  .reason-card { padding: 18px 14px; }
+  .reason-icon-box { width: 52px; height: 52px; font-size: 1.3rem; }
+  .navbar-brand .brand-title { font-size: 1rem; }
+  .navbar-brand .brand-sub { display: none; }
+  .footer-custom { padding: 40px 0 20px; }
+  h2 { font-size: 1.4rem !important; }
+  h3 { font-size: 1.2rem !important; }
+}

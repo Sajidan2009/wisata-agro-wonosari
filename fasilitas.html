@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fasilitas Lengkap - Wisata Agro Wonosari Malang</title>
+  <meta name="description" content="Daftar lengkap fasilitas Wisata Agro Wonosari: Tea Walk, Kolam Renang, Flying Fox, Paintball, Hotel, Camping Ground, Pabrik Teh, dan banyak lagi." />
+
+  <!-- CSS Dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Category Section Header */
+    .fasilitas-section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #E8F5E9;
+    }
+    .fasilitas-section-title .section-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .fasilitas-section-title h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #1B3B2B;
+      margin: 0;
+    }
+    .fasilitas-section-title p {
+      font-size: 0.88rem;
+      color: #6C757D;
+      margin: 2px 0 0 0;
+    }
+
+    /* Facility Card Image */
+    .fas-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    .facility-card:hover .fas-card-img {
+      transform: scale(1.06);
+    }
+    .facility-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(76,175,80,0.15);
+      box-shadow: 0 6px 20px rgba(46,125,50,0.07);
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .facility-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 36px rgba(46,125,50,0.15);
+      border-color: rgba(76,175,80,0.35);
+    }
+    .facility-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .facility-card-body h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #212529;
+      margin-bottom: 10px;
+    }
+    .facility-card-body p {
+      font-size: 0.88rem;
+      color: #6C757D;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    /* Category badge pill */
+    .cat-pill {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(27,59,43,0.88);
+      color: #fff;
+      font-size: 0.73rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      backdrop-filter: blur(6px);
+    }
+    .cat-pill.amber {
+      background: rgba(200, 120, 0, 0.9);
+    }
+
+    @media (max-width: 768px) {
+      .fas-card-img { height: 170px; }
+      .fasilitas-section-title h3 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand m-0" href="index.html">
+        <i class="fa-solid fa-leaf"></i>
+        <span class="brand-title">AGRO WONOSARI <small class="brand-sub">OUTBOUND &amp; TEA GARDEN</small></span>
+      </a>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="paket.html">Paket Outbound</a></li>
+          <li class="nav-item"><a class="nav-link active" href="fasilitas.html">Fasilitas</a></li>
+          <li class="nav-item"><a class="nav-link" href="artikel.html">Artikel</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20tanya%20fasilitas%20dan%20paket" target="_blank" class="btn btn-amber text-dark px-4 py-2" style="font-size: 0.9rem;">
+              <i class="fa-brands fa-whatsapp"></i> Reservasi
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero Header -->
+  <section class="page-hero">
+    <div class="container position-relative z-1">
+      <span class="badge badge-amber mb-3"><i class="fa-solid fa-building-circle-check me-1"></i> Sarana &amp; Prasarana</span>
+      <h1>Fasilitas Wisata Agro Wonosari</h1>
+      <p>Sarana pendukung lengkap dan modern di tengah sejuknya hamparan kebun teh 1.140 hektar untuk kenyamanan outbound, rapat kerja, dan liburan keluarga Anda.</p>
+    </div>
+  </section>
+
+  <!-- Stats Row -->
+  <section class="py-4 bg-white border-bottom">
+    <div class="container">
+      <div class="row g-3 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3" style="background: #E8F5E9;">
+            <div class="fw-bold text-success" style="font-size: 1.6rem;">20+</div>
+            <div class="text-muted" style="font-size: 0.83rem;">Jenis Fasilitas</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3" style="background: #E8F5E9;">
+            <div class="fw-bold text-success" style="font-size: 1.6rem;">1.140</div>
+            <div class="text-muted" style="font-size: 0.83rem;">Hektar Kebun Teh</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3" style="background: #E8F5E9;">
+            <div class="fw-bold text-success" style="font-size: 1.6rem;">300+</div>
+            <div class="text-muted" style="font-size: 0.83rem;">Kapasitas Seat Resto</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3" style="background: #E8F5E9;">
+            <div class="fw-bold text-success" style="font-size: 1.6rem;">24 Jam</div>
+            <div class="text-muted" style="font-size: 0.83rem;">Keamanan Area</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1: Fasilitas Rekreasi & Umum
+       ============================================================ -->
+  <section class="py-5 bg-light">
+    <div class="container">
+
+      <div class="fasilitas-section-title" data-reveal>
+        <div class="section-icon"><i class="fa-solid fa-tree"></i></div>
+        <div>
+          <h3>🌴 Fasilitas Rekreasi &amp; Umum</h3>
+          <p>Area wisata alam terbuka, edukasi, dan kuliner untuk kenyamanan semua kalangan</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Jalur Tea Walk -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Tourist_walking_tea_plantation_path_202608051849.jpeg"
+                   alt="Jalur Tea Walk Wonosari" class="fas-card-img">
+              <span class="cat-pill">🌿 Rekreasi Alam</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-route text-success me-2"></i>Jalur Tea Walk</h5>
+              <p>Jalur trekking ringan menyusuri kebun teh dengan pemandangan Gunung Arjuno dan udara segar pegunungan 1.100 MDPL. Cocok untuk semua usia, didampingi pemandu lokal berpengalaman.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Panjang jalur ±2 km (adjustable)</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Pemandu lokal tersedia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolam Renang Air Hangat -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/kolamairhangat.jpg"
+                   alt="Kolam Renang Air Hangat" class="fas-card-img">
+              <span class="cat-pill">💧 Rekreasi Air</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-water-ladder text-success me-2"></i>Kolam Renang Air Hangat</h5>
+              <p>Kolam renang berfasilitas air hangat alami yang cocok untuk relaksasi setelah beraktivitas fisik seharian. Tersedia kolam anak dangkal dan kolam dewasa bersumber dari mata air pegunungan Arjuno.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Air hangat alami tanpa kaporit pekat</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Kamar bilas &amp; ganti tersedia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Taman Bermain Anak -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Children's_playground_with_slide…_202608051854.jpeg"
+                   alt="Taman Bermain Anak" class="fas-card-img">
+              <span class="cat-pill amber">🧒 Anak-Anak</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-child text-success me-2"></i>Taman Bermain Anak</h5>
+              <p>Area terbuka hijau berpagar aman dengan wahana permainan edukatif anak: ayunan, perosotan, jungkat-jungkit, dan jungle gym mini. Dirancang untuk usia 3–12 tahun dengan material ramah lingkungan.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Area pagar aman &amp; terawasi</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Material food-grade &amp; anti-karat</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wisata Edukasi Pabrik Teh -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Educational_tour_tea_factory_Malang_202608051854.jpeg"
+                   alt="Wisata Edukasi Pabrik Teh" class="fas-card-img">
+              <span class="cat-pill">🏭 Wisata Edukasi</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-industry text-success me-2"></i>Wisata Edukasi Pabrik Teh</h5>
+              <p>Tur panduan belajar sejarah pemetikan hingga proses pengolahan daun teh hitam di pabrik bersejarah era kolonial 1875. Peserta dapat menyaksikan proses pelayuran, penggulungan, fermentasi, dan pengepakan.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Pemandu berpengalaman PTPN</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Tea tasting experience inklusif</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Restoran & Tea House -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Restaurant_and_tea_house_plantation_202608051856.jpeg"
+                   alt="Restoran Tea House Wonosari" class="fas-card-img">
+              <span class="cat-pill amber">🍜 Kuliner</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-utensils text-success me-2"></i>Restoran &amp; Tea House</h5>
+              <p>Tempat makan dengan menu khas pedesaan serta varian teh seduh hangat asli Wonosari. Kapasitas 300+ seat prasmanan untuk rombongan besar. Tersedia paket nasi tumpeng, gala dinner, dan coffee break.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Kapasitas 300+ seat prasmanan</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Menu halal bersertifikat</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Penginapan & Cottage -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Green_field_for_corporate_gathering_202608051855.jpeg"
+                   alt="Penginapan Cottage Wonosari" class="fas-card-img">
+              <span class="cat-pill">🏨 Akomodasi</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-hotel text-success me-2"></i>Penginapan &amp; Cottage</h5>
+              <p>Pilihan akomodasi mulai dari kamar hotel tipe Standard, Deluxe, Superior, hingga cottage keluarga bernuansa pegunungan klasik. Semua dilengkapi air hangat, Wi-Fi, dan balkon pemandangan kebun teh.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Kapasitas ratusan tamu</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Free water heater &amp; Wi-Fi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2: Fasilitas Outbound & Wahana
+       ============================================================ -->
+  <section class="py-5 bg-white">
+    <div class="container">
+
+      <div class="fasilitas-section-title" data-reveal>
+        <div class="section-icon"><i class="fa-solid fa-person-running"></i></div>
+        <div>
+          <h3>🎯 Fasilitas Outbound &amp; Wahana</h3>
+          <p>Wahana petualangan dan peralatan team building berstandar internasional</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Lapangan Outbound Luas -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+                   alt="Lapangan Outbound Luas" class="fas-card-img">
+              <span class="cat-pill">⚡ Outbound</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-flag text-success me-2"></i>Lapangan Outbound Luas</h5>
+              <p>Tiga area rumput berkapasitas besar untuk ice breaking, fun games, hingga team building besar. Mampu menampung hingga ratusan peserta sekaligus dengan ground yang rata dan aman untuk berbagai permainan.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>3 titik area bermain terpisah</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Kapasitas hingga 1000+ peserta</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flying Fox -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Flying_fox_zip_line_activity_202608051855.jpeg"
+                   alt="Wahana Flying Fox" class="fas-card-img">
+              <span class="cat-pill">🪂 Wahana</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-person-hiking text-success me-2"></i>Wahana Flying Fox</h5>
+              <p>Zipline meluncur tinggi melintasi kebun teh dengan perlengkapan standar keselamatan internasional. Lintasan sepanjang 150 meter dengan pemandangan menakjubkan. Tersedia jalur khusus anak dan dewasa.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Double safety sling rope &amp; harness</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Instruktur bersertifikasi BNSP</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arena Paintball -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Paintball_arena_with_obstacles_202608051856.jpeg"
+                   alt="Arena Paintball Wonosari" class="fas-card-img">
+              <span class="cat-pill">🔫 Simulasi</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-crosshairs text-success me-2"></i>Arena Simulasi Paintball</h5>
+              <p>Area pertempuran taktis luar ruangan lengkap dengan baju pelindung, helm, dan senjata cat. Barikade kayu dan vegetasi rimbun menciptakan suasana seru. Tersedia paket kompetisi tim dan solo play.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Full body vest, helm, &amp; goggle</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Wasit &amp; marshall keselamatan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jalur Offroad & ATV -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Dirt_offroad_ATV_adventure_track_202608051856.jpeg"
+                   alt="Jalur Offroad ATV" class="fas-card-img">
+              <span class="cat-pill amber">🏍️ Petualangan</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-truck-monster text-success me-2"></i>Jalur Offroad &amp; ATV</h5>
+              <p>Lintasan tanah dan berbatu menyusuri kebun teh untuk petualangan kendaraan roda empat. Trek khusus untuk menyusuri perkebunan teh menggunakan motor ATV atau kendaraan jip offroad bersama pemandu.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>ATV untuk dewasa &amp; anak</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Pemandu berpengalaman</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sound System & Peralatan Game -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Green_field_for_corporate_gathering_202608051855.jpeg"
+                   alt="Sound System Outbound" class="fas-card-img">
+              <span class="cat-pill">🔊 Event</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-volume-high text-success me-2"></i>Sound System &amp; Peralatan Game</h5>
+              <p>Perangkat audio outdoor profesional dan properti permainan lengkap untuk mendukung jalannya acara team building dan fun games. Termasuk TOA outdoor, microphone wireless, dan aneka properti game seru.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Sound system outdoor 5000W</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Properti 30+ jenis permainan tim</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gedung Serbaguna -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Multi-purpose_hall_for_MICE_202608051856.jpeg"
+                   alt="Gedung Serbaguna Hall" class="fas-card-img">
+              <span class="cat-pill">🏛️ MICE</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-people-roof text-success me-2"></i>Gedung Serbaguna / Hall</h5>
+              <p>Ruangan indoor ber-AC serbaguna untuk rapat, gathering, atau acara formal. Kapasitas 50–300 peserta dengan setup layout fleksibel (Theater, U-Shape, Banquet). Dilengkapi LCD projector dan sound system indoor.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Layout setup flexible</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Coffee break service tersedia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: Fasilitas Akomodasi & MICE
+       ============================================================ -->
+  <section class="py-5 bg-light">
+    <div class="container">
+
+      <div class="fasilitas-section-title" data-reveal>
+        <div class="section-icon"><i class="fa-solid fa-campground"></i></div>
+        <div>
+          <h3>🏕️ Fasilitas Akomodasi &amp; MICE</h3>
+          <p>Penginapan dan fasilitas untuk menginap, berkemah, dan acara indoor</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Hotel & Cottage -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/hotelagrowonosarijpg.jpg"
+                   alt="Hotel Cottage Wonosari" class="fas-card-img">
+              <span class="cat-pill">🏨 Hotel</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-hotel text-success me-2"></i>Hotel &amp; Cottage</h5>
+              <p>Penginapan bernuansa klasik dan modern untuk wisatawan keluarga maupun rombongan. Tipe Standard hingga Cottage dengan balkon menghadap kebun teh, air hangat, TV, dan Wi-Fi gratis sepanjang menginap.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>View kebun teh dari balkon</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Breakfast tersedia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Camping Ground -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Camping_ground_area_at_Wisata_202608051856.jpeg"
+                   alt="Camping Ground Wonosari" class="fas-card-img">
+              <span class="cat-pill">⛺ Camping</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-campground text-success me-2"></i>Camping Ground</h5>
+              <p>Area berkemah dengan fasilitas tenda dome sewa, MCK bersih dekat area kemah, instalasi listrik lapangan, dan keamanan 24 jam. Lapangan rumput hijau luas berkapasitas puluhan tenda dome berbagai ukuran.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Sewa tenda &amp; matras lengkap</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>MCK bersih &amp; listrik area</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Area Api Unggun -->
+        <div class="col-lg-4 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+                   alt="Area Api Unggun" class="fas-card-img">
+              <span class="cat-pill amber">🔥 Malam</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-fire text-success me-2"></i>Area Api Unggun</h5>
+              <p>Lapangan khusus untuk acara keakraban malam hari dilengkapi fasilitas kayu bakar yang sudah disiapkan. Suasana malam di kebun teh dengan bintang dan api unggun menciptakan momen yang tidak terlupakan.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Kayu bakar tersedia (paket)</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Area lapang &amp; aman</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: Fasilitas Pendukung & Keamanan
+       ============================================================ -->
+  <section class="py-5 bg-white">
+    <div class="container">
+
+      <div class="fasilitas-section-title" data-reveal>
+        <div class="section-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div>
+          <h3>🔌 Fasilitas Pendukung &amp; Keamanan</h3>
+          <p>Infrastruktur penunjang kenyamanan dan keselamatan seluruh pengunjung kawasan</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Area Parkir Luas -->
+        <div class="col-lg-3 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="assets/img/Parking_area_at_Wisata_Agro_202608051857.jpeg"
+                   alt="Parkir Bus Wonosari" class="fas-card-img">
+              <span class="cat-pill">🚌 Akses</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-bus text-success me-2"></i>Area Parkir Luas</h5>
+              <p>Lahan parkir beraspal yang muat 30+ bus pariwisata dan ratusan mobil/motor. Pos petugas &amp; CCTV area 24 jam.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Bus medium/big masuk mudah</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>CCTV &amp; petugas jaga</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Musholla -->
+        <div class="col-lg-3 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80"
+                   alt="Musholla Wonosari" class="fas-card-img">
+              <span class="cat-pill">🕌 Ibadah</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-mosque text-success me-2"></i>Musholla</h5>
+              <p>Sarana ibadah bersih lengkap dengan tempat wudhu terpisah pria-wanita dan peralatan sholat tersedia. Tersebar di beberapa titik kawasan wisata.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Tempat wudhu terpisah</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Sajadah &amp; mukena tersedia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toilet & Kamar Bilas -->
+        <div class="col-lg-3 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&w=600&q=80"
+                   alt="Toilet Kamar Bilas" class="fas-card-img">
+              <span class="cat-pill">🚿 Sanitasi</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-restroom text-success me-2"></i>Toilet &amp; Kamar Bilas</h5>
+              <p>Fasilitas kebersihan terawat yang tersebar dekat area outbound dan kolam renang. Selalu dijaga kebersihan dan ketersediaan airnya oleh petugas kebersihan kami.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Tersebar di 5+ titik kawasan</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Petugas kebersihan rutin</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pusat Oleh-Oleh -->
+        <div class="col-lg-3 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=600&q=80"
+                   alt="Pusat Oleh-Oleh Wonosari" class="fas-card-img">
+              <span class="cat-pill amber">🛍️ Belanja</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-bag-shopping text-success me-2"></i>Pusat Oleh-Oleh</h5>
+              <p>Toko cenderamata yang menjual teh kemasan lokal (berbagai varian), camilan khas Malang, dan kerajinan tangan. Teh Wonosari tersedia dalam kemasan 100gr hingga 1kg untuk oleh-oleh.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Teh original Wonosari</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Souvenir &amp; kerajinan lokal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tim Medis / P3K -->
+        <div class="col-lg-3 col-md-6" data-reveal>
+          <div class="facility-card">
+            <div class="position-relative overflow-hidden">
+              <!-- Ganti src foto ini sesuai kebutuhan -->
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80"
+                   alt="Tim Medis P3K" class="fas-card-img">
+              <span class="cat-pill">🏥 Kesehatan</span>
+            </div>
+            <div class="facility-card-body">
+              <h5><i class="fa-solid fa-kit-medical text-success me-2"></i>Tim Pos Medis &amp; P3K</h5>
+              <p>Petugas lapangan terlatih beserta kotak P3K siap siaga mengatasi cedera ringan peserta outbound. Tersedia di area outbound dan kolam renang selama kegiatan berlangsung.</p>
+              <ul class="list-unstyled mt-2 border-top pt-2" style="font-size: 0.82rem; color: #6C757D;">
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Petugas terlatih first aid</li>
+                <li class="mb-1"><i class="fa-solid fa-check text-success me-2"></i>Kotak P3K lengkap</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Reservation Banner -->
+  <section class="py-5 bg-light border-top border-bottom">
+    <div class="container" data-reveal>
+      <div class="p-4 p-md-5 rounded-4 text-white text-center position-relative overflow-hidden shadow-lg" style="background: linear-gradient(135deg, var(--deep-forest), var(--dark-green));">
+        <h3 class="fw-bold mb-3">Butuh Informasi Penggunaan Fasilitas Untuk Acara Anda?</h3>
+        <p class="text-white-50 mx-auto mb-4" style="font-size: 1.05rem; max-width: 600px;">
+          Tim reservasi Wisata Agro Wonosari siap membantu penyesuaian penggunaan hall meeting, penginapan, resto, dan wahana outbound sesuai kebutuhan rombongan Anda.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="paket.html" class="btn btn-amber text-dark px-4 py-3 rounded-pill fw-bold">
+            <i class="fa-solid fa-boxes-packing me-2"></i> Lihat Pilihan Paket
+          </a>
+          <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20tanya%20reservasi%20fasilitas" target="_blank" class="btn btn-primary-custom px-4 py-3 rounded-pill fw-bold">
+            <i class="fa-brands fa-whatsapp me-2"></i> Chat WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-widget-group">
+    <button type="button" id="backToTopBtn" class="floating-btn floating-btn-top" aria-label="Kembali ke atas">
+      <i class="fa-solid fa-arrow-up"></i>
+      <span class="floating-tooltip">Ke Atas</span>
+    </button>
+    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20tanya%20fasilitas" target="_blank" class="floating-btn floating-btn-wa" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="floating-tooltip">Chat WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <i class="fa-solid fa-leaf"></i>
+            <span>AGRO WONOSARI</span>
+          </div>
+          <p class="text-white-50 mb-3" style="font-size: 0.9rem; line-height: 1.7;">
+            Pusat Outbound, Edukasi, dan Team Building di Kebun Teh Wonosari Lawang, Malang. Pengalaman berkesan di alam terbuka yang asri dan sejuk.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5>Navigasi</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right me-2 text-warning small"></i>Beranda</a></li>
+            <li><a href="tentang.html"><i class="fa-solid fa-chevron-right me-2 text-warning small"></i>Tentang Kami</a></li>
+            <li><a href="paket.html"><i class="fa-solid fa-chevron-right me-2 text-warning small"></i>Paket Outbound</a></li>
+            <li><a href="fasilitas.html"><i class="fa-solid fa-chevron-right me-2 text-warning small"></i>Fasilitas</a></li>
+            <li><a href="artikel.html"><i class="fa-solid fa-chevron-right me-2 text-warning small"></i>Artikel &amp; Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Fasilitas Utama</h5>
+          <ul class="footer-links">
+            <li><a href="fasilitas.html"><i class="fa-solid fa-hotel me-2 text-warning small"></i>Hotel &amp; Wisma</a></li>
+            <li><a href="fasilitas.html"><i class="fa-solid fa-utensils me-2 text-warning small"></i>Restoran &amp; Tea House</a></li>
+            <li><a href="fasilitas.html"><i class="fa-solid fa-water-ladder me-2 text-warning small"></i>Kolam Renang Air Hangat</a></li>
+            <li><a href="fasilitas.html"><i class="fa-solid fa-person-hiking me-2 text-warning small"></i>Flying Fox &amp; Paintball</a></li>
+            <li><a href="fasilitas.html"><i class="fa-solid fa-campground me-2 text-warning small"></i>Camping Ground</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Kontak &amp; Lokasi</h5>
+          <ul class="footer-links text-white-50" style="font-size: 0.9rem;">
+            <li class="mb-2 d-flex gap-2"><i class="fa-solid fa-location-dot text-warning mt-1"></i> Kebun Teh Wonosari, Lawang, Malang, Jawa Timur</li>
+            <li class="mb-2 d-flex gap-2"><i class="fa-solid fa-phone text-warning mt-1"></i> (0341) 426000</li>
+            <li class="mb-2 d-flex gap-2"><i class="fa-brands fa-whatsapp text-warning mt-1"></i> 0812-3456-7890</li>
+            <li class="mb-2 d-flex gap-2"><i class="fa-solid fa-envelope text-warning mt-1"></i> info@outboundagrowonosari.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center">
+        <p class="m-0 text-white-50">
+          &copy; 2026 Wisata Agro Wonosari Outbound. All rights reserved. Built for Fresh Agro Experience.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
