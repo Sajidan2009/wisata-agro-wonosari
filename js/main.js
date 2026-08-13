@@ -177,55 +177,70 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ========================================================
-     9. FACILITIES FILTER, LIVE SEARCH & MODAL HANDLER
+     9. FACILITY DIRECTORY SHOWCASE & MODAL HANDLER
      ======================================================== */
-  const fasFilterBtns = document.querySelectorAll('.fas-filter-btn');
+  const fasNavPills = document.querySelectorAll('.fas-nav-pill');
   const fasSearchInput = document.getElementById('facilitySearchInput');
-  const fasCards = document.querySelectorAll('.fas-compact-col');
+  const fasCatSections = document.querySelectorAll('.fas-cat-section');
+  const fasDirCols = document.querySelectorAll('.fas-dir-col');
   const fasNoResults = document.getElementById('fasNoResults');
 
   let activeCategory = 'all';
 
-  function filterFacilities() {
+  function filterDirectory() {
     const searchQuery = fasSearchInput ? fasSearchInput.value.toLowerCase().trim() : '';
-    let visibleCount = 0;
+    let totalVisible = 0;
 
-    fasCards.forEach(col => {
-      const cat = col.getAttribute('data-category') || 'all';
-      const title = col.querySelector('.fas-compact-title')?.textContent.toLowerCase() || '';
-      const desc = col.querySelector('.fas-compact-desc')?.textContent.toLowerCase() || '';
-      const tags = col.querySelector('.fas-compact-tags')?.textContent.toLowerCase() || '';
+    fasCatSections.forEach(section => {
+      const sectionCat = section.getAttribute('data-category');
+      const catMatch = (activeCategory === 'all' || activeCategory === sectionCat);
+      const cols = section.querySelectorAll('.fas-dir-col');
+      let sectionVisibleCount = 0;
 
-      const matchesCat = (activeCategory === 'all' || cat === activeCategory);
-      const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery) || tags.includes(searchQuery);
+      cols.forEach(col => {
+        const title = col.querySelector('.fas-dir-title')?.textContent.toLowerCase() || '';
+        const desc = col.querySelector('.fas-dir-desc')?.textContent.toLowerCase() || '';
+        const searchMatch = !searchQuery || title.includes(searchQuery) || desc.includes(searchQuery);
 
-      if (matchesCat && matchesSearch) {
-        col.style.display = 'block';
-        visibleCount++;
+        if (catMatch && searchMatch) {
+          col.style.display = 'block';
+          sectionVisibleCount++;
+          totalVisible++;
+        } else {
+          col.style.display = 'none';
+        }
+      });
+
+      // Show/hide category section header and wrapper based on matching items inside
+      if (catMatch && sectionVisibleCount > 0) {
+        section.style.display = 'block';
       } else {
-        col.style.display = 'none';
+        section.style.display = 'none';
       }
     });
 
     if (fasNoResults) {
-      fasNoResults.classList.toggle('d-none', visibleCount > 0);
+      fasNoResults.classList.toggle('d-none', totalVisible > 0);
     }
   }
 
-  fasFilterBtns.forEach(btn => {
-    btn.addEventListener('click', function () {
-      fasFilterBtns.forEach(b => b.classList.remove('active'));
+  fasNavPills.forEach(pill => {
+    pill.addEventListener('click', function (e) {
+      const targetFilter = this.getAttribute('data-filter') || 'all';
+      
+      // If it's an anchor link, smooth scroll to section if specified
+      fasNavPills.forEach(p => p.classList.remove('active'));
       this.classList.add('active');
-      activeCategory = this.getAttribute('data-filter') || 'all';
-      filterFacilities();
+      activeCategory = targetFilter;
+      filterDirectory();
     });
   });
 
   if (fasSearchInput) {
-    fasSearchInput.addEventListener('input', filterFacilities);
+    fasSearchInput.addEventListener('input', filterDirectory);
   }
 
-  // Facility Quick View Modal handler
+  // Facility Consultative Modal Handler
   const facilityModal = document.getElementById('facilityDetailModal');
   if (facilityModal) {
     facilityModal.addEventListener('show.bs.modal', function (event) {
@@ -246,8 +261,13 @@ document.addEventListener('DOMContentLoaded', function () {
       if (modalTitleEl) modalTitleEl.textContent = title;
       if (modalBadgeEl) modalBadgeEl.textContent = cat;
       if (modalImgEl) {
-        modalImgEl.src = img;
-        modalImgEl.alt = title;
+        if (img) {
+          modalImgEl.src = img;
+          modalImgEl.alt = title;
+          modalImgEl.parentElement.style.display = 'block';
+        } else {
+          modalImgEl.parentElement.style.display = 'none';
+        }
       }
       if (modalDescEl) modalDescEl.textContent = desc;
 
@@ -269,10 +289,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const waBtn = document.getElementById('modalFasWaBtn');
       if (waBtn) {
-        waBtn.href = `https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20tanya%20detail%20fasilitas%20${encodeURIComponent(title)}`;
+        waBtn.href = `https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20konsultasi%20ketersediaan%20fasilitas%20${encodeURIComponent(title)}`;
       }
     });
   }
 
 });
+
 
