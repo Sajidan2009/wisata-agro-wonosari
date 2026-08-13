@@ -1,9 +1,11 @@
-// Wisata Agro Wonosari - Main JavaScript
+// Wisata Agro Wonosari – Main JS v3.0 Premium
+// Handles: Smart Navbar, Back-To-Top, Scroll Reveal, Counter Animation, Article Search
 
 document.addEventListener('DOMContentLoaded', function () {
-  // ================================================================
-  // Navbar: Hide on scroll down, show on scroll up (smart navbar)
-  // ================================================================
+
+  /* ========================================================
+     1. SMART NAVBAR – Hide on scroll down, show on scroll up
+     ======================================================== */
   const navbar = document.querySelector('.navbar-custom');
   let lastScrollY = window.scrollY;
   let ticking = false;
@@ -11,126 +13,121 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', function () {
     if (!ticking) {
       window.requestAnimationFrame(function () {
-        const currentScrollY = window.scrollY;
+        const currentY = window.scrollY;
 
         if (navbar) {
-          // Add scrolled class for shadow effect
-          if (currentScrollY > 40) {
-            navbar.classList.add('scrolled');
-            navbar.style.boxShadow = '0 4px 20px rgba(46, 125, 50, 0.12)';
+          // Shadow on scroll
+          if (currentY > 50) {
+            navbar.style.boxShadow = '0 4px 24px rgba(27,59,43,0.12)';
           } else {
-            navbar.classList.remove('scrolled');
-            navbar.style.boxShadow = 'none';
+            navbar.style.boxShadow = '0 2px 20px rgba(27,59,43,0.06)';
           }
-
-          // Hide navbar when scrolling down, show when scrolling up
-          if (currentScrollY > lastScrollY && currentScrollY > 80) {
-            // Scrolling DOWN → hide navbar
+          // Hide/show logic
+          if (currentY > lastScrollY && currentY > 100) {
             navbar.style.transform = 'translateY(-100%)';
           } else {
-            // Scrolling UP or at top → show navbar
             navbar.style.transform = 'translateY(0)';
           }
         }
 
-        // Back to Top button visibility
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        if (backToTopBtn) {
-          if (currentScrollY > 350) {
-            backToTopBtn.classList.add('show');
-          } else {
-            backToTopBtn.classList.remove('show');
-          }
+        // Back-to-top visibility
+        const btn = document.getElementById('backToTopBtn');
+        if (btn) {
+          if (currentY > 380) btn.classList.add('show');
+          else btn.classList.remove('show');
         }
 
-        lastScrollY = currentScrollY;
+        lastScrollY = currentY;
         ticking = false;
       });
       ticking = true;
     }
   });
 
-  // Ensure navbar transition is smooth
-  if (navbar) {
-    navbar.style.transition = 'transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease';
-  }
-
-  // ================================================================
-  // Back to Top click handler
-  // ================================================================
+  /* ========================================================
+     2. BACK TO TOP
+     ======================================================== */
   const backToTopBtn = document.getElementById('backToTopBtn');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  // ================================================================
-  // Scroll Reveal Animation
-  // ================================================================
-  const revealElements = document.querySelectorAll('[data-reveal]');
-  if (revealElements.length) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.07, rootMargin: '0px 0px -25px 0px' });
+  /* ========================================================
+     3. SCROLL REVEAL (Fade Up, Blur In, Scale, Stagger)
+     ======================================================== */
+  const revealSelectors = [
+    { selector: '[data-reveal]' },
+    { selector: '[data-reveal-blur]' },
+    { selector: '[data-reveal-scale]' },
+    { selector: '.stagger-children' }
+  ];
 
-    revealElements.forEach((el) => revealObserver.observe(el));
-  }
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
-  // ================================================================
-  // Counter Animation (Hero stats)
-  // ================================================================
+  revealSelectors.forEach(({ selector }) => {
+    document.querySelectorAll(selector).forEach(el => revealObserver.observe(el));
+  });
+
+  /* ========================================================
+     4. COUNTER ANIMATION
+     ======================================================== */
   function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-target'));
-    const duration = 1500;
+    const duration = 1600;
     const step = target / (duration / 16);
     let current = 0;
     const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = Math.floor(current).toLocaleString();
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current).toLocaleString('id-ID');
+      if (current >= target) clearInterval(timer);
     }, 16);
   }
 
-  const counters = document.querySelectorAll('[data-counter]');
-  if (counters.length) {
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach((c) => counterObserver.observe(c));
-  }
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
 
-  // ================================================================
-  // Active navbar link highlighting based on current page
-  // ================================================================
+  document.querySelectorAll('[data-counter]').forEach(c => counterObserver.observe(c));
+
+  /* ========================================================
+     5. IMAGE HOVER ZOOM (for fas-card images)
+     ======================================================== */
+  document.querySelectorAll('.fas-card').forEach(card => {
+    const img = card.querySelector('img');
+    if (!img) return;
+    card.addEventListener('mouseenter', () => { img.style.transform = 'scale(1.06)'; });
+    card.addEventListener('mouseleave', () => { img.style.transform = 'scale(1)'; });
+  });
+
+  /* ========================================================
+     6. ACTIVE NAVBAR LINK
+     ======================================================== */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
-    const href = link.getAttribute('href');
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    const href = link.getAttribute('href') || '';
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
     }
   });
 
-  // ================================================================
-  // Article Search & Filter Logic (artikel.html)
-  // ================================================================
+  /* ========================================================
+     7. ARTICLE SEARCH & FILTER (artikel.html)
+     ======================================================== */
   const articleSearchInput = document.getElementById('articleSearchInput');
   const noResultsMsg = document.getElementById('noResultsMsg');
   const searchResetBtn = document.getElementById('searchResetBtn');
@@ -138,29 +135,23 @@ document.addEventListener('DOMContentLoaded', function () {
   if (articleSearchInput) {
     articleSearchInput.addEventListener('input', function () {
       const query = this.value.toLowerCase().trim();
-      const articleItems = document.querySelectorAll('.article-card-item');
+      const items = document.querySelectorAll('.article-card-item');
       let matches = 0;
 
-      articleItems.forEach((item) => {
+      items.forEach(item => {
         const title = item.querySelector('.article-title')?.textContent.toLowerCase() || '';
-        const desc = item.querySelector('.article-desc')?.textContent.toLowerCase() || '';
-        const tag = item.querySelector('.article-tag')?.textContent.toLowerCase() || '';
-
-        const show = title.includes(query) || desc.includes(query) || tag.includes(query);
+        const desc  = item.querySelector('.article-desc')?.textContent.toLowerCase() || '';
+        const tag   = item.querySelector('.article-tag')?.textContent.toLowerCase() || '';
+        const show  = title.includes(query) || desc.includes(query) || tag.includes(query);
         item.style.display = show ? 'block' : 'none';
         if (show) matches++;
       });
 
-      // Update count
       const countEl = document.getElementById('articleCount');
       if (countEl) countEl.textContent = `Menampilkan ${matches} Artikel`;
 
-      // Show/hide no results message
-      if (noResultsMsg) {
-        noResultsMsg.classList.toggle('d-none', matches > 0);
-      }
+      if (noResultsMsg) noResultsMsg.classList.toggle('d-none', matches > 0);
 
-      // Deactivate category buttons on custom search
       if (query.length > 0) {
         document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
       }
@@ -170,10 +161,118 @@ document.addEventListener('DOMContentLoaded', function () {
       searchResetBtn.addEventListener('click', function () {
         articleSearchInput.value = '';
         articleSearchInput.dispatchEvent(new Event('input'));
-        // Re-activate "Semua" category
         const allBtn = document.querySelector('.category-btn[data-category="semua"]');
         if (allBtn) allBtn.click();
       });
     }
   }
+
+  /* ========================================================
+     8. PREMIUM BUTTON CLICK EFFECT (active press animation)
+     ======================================================== */
+  document.querySelectorAll('.btn-primary-custom, .btn-amber').forEach(btn => {
+    btn.addEventListener('mousedown', () => { btn.style.transform = 'translateY(0px) scale(0.97)'; });
+    btn.addEventListener('mouseup', () => { btn.style.transform = ''; });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+
+  /* ========================================================
+     9. FACILITIES FILTER, LIVE SEARCH & MODAL HANDLER
+     ======================================================== */
+  const fasFilterBtns = document.querySelectorAll('.fas-filter-btn');
+  const fasSearchInput = document.getElementById('facilitySearchInput');
+  const fasCards = document.querySelectorAll('.fas-compact-col');
+  const fasNoResults = document.getElementById('fasNoResults');
+
+  let activeCategory = 'all';
+
+  function filterFacilities() {
+    const searchQuery = fasSearchInput ? fasSearchInput.value.toLowerCase().trim() : '';
+    let visibleCount = 0;
+
+    fasCards.forEach(col => {
+      const cat = col.getAttribute('data-category') || 'all';
+      const title = col.querySelector('.fas-compact-title')?.textContent.toLowerCase() || '';
+      const desc = col.querySelector('.fas-compact-desc')?.textContent.toLowerCase() || '';
+      const tags = col.querySelector('.fas-compact-tags')?.textContent.toLowerCase() || '';
+
+      const matchesCat = (activeCategory === 'all' || cat === activeCategory);
+      const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery) || tags.includes(searchQuery);
+
+      if (matchesCat && matchesSearch) {
+        col.style.display = 'block';
+        visibleCount++;
+      } else {
+        col.style.display = 'none';
+      }
+    });
+
+    if (fasNoResults) {
+      fasNoResults.classList.toggle('d-none', visibleCount > 0);
+    }
+  }
+
+  fasFilterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      fasFilterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      activeCategory = this.getAttribute('data-filter') || 'all';
+      filterFacilities();
+    });
+  });
+
+  if (fasSearchInput) {
+    fasSearchInput.addEventListener('input', filterFacilities);
+  }
+
+  // Facility Quick View Modal handler
+  const facilityModal = document.getElementById('facilityDetailModal');
+  if (facilityModal) {
+    facilityModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      if (!button) return;
+
+      const title = button.getAttribute('data-title') || '';
+      const cat = button.getAttribute('data-cat') || '';
+      const img = button.getAttribute('data-img') || '';
+      const desc = button.getAttribute('data-desc') || '';
+      const specs = button.getAttribute('data-specs') || '';
+
+      const modalTitleEl = document.getElementById('modalFasTitle');
+      const modalBadgeEl = document.getElementById('modalFasBadge');
+      const modalImgEl = document.getElementById('modalFasImg');
+      const modalDescEl = document.getElementById('modalFasDesc');
+
+      if (modalTitleEl) modalTitleEl.textContent = title;
+      if (modalBadgeEl) modalBadgeEl.textContent = cat;
+      if (modalImgEl) {
+        modalImgEl.src = img;
+        modalImgEl.alt = title;
+      }
+      if (modalDescEl) modalDescEl.textContent = desc;
+
+      const specsContainer = document.getElementById('modalFasSpecs');
+      if (specsContainer) {
+        specsContainer.innerHTML = '';
+        if (specs) {
+          const list = specs.split(';');
+          list.forEach(item => {
+            if (item.trim()) {
+              const specEl = document.createElement('div');
+              specEl.className = 'facility-modal-spec-item';
+              specEl.innerHTML = `<i class="fa-solid fa-circle-check text-success"></i> <span>${item.trim()}</span>`;
+              specsContainer.appendChild(specEl);
+            }
+          });
+        }
+      }
+
+      const waBtn = document.getElementById('modalFasWaBtn');
+      if (waBtn) {
+        waBtn.href = `https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20tanya%20detail%20fasilitas%20${encodeURIComponent(title)}`;
+      }
+    });
+  }
+
 });
+

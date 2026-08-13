@@ -41,23 +41,37 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section – Premium Cinematic -->
   <section class="hero-section text-white position-relative">
-    <div class="container position-relative z-1">
+
+    <!-- Floating botanical leaves -->
+    <svg class="hero-leaf" style="top:12%;left:6%" viewBox="0 0 80 120" fill="white"><path d="M40 5 C20 5 5 25 5 55 C5 85 20 110 40 115 C60 110 75 85 75 55 C75 25 60 5 40 5Z"/></svg>
+    <svg class="hero-leaf" style="top:55%;right:8%;width:55px" viewBox="0 0 80 120" fill="white"><path d="M40 5 C20 5 5 25 5 55 C5 85 20 110 40 115 C60 110 75 85 75 55 C75 25 60 5 40 5Z"/></svg>
+    <svg class="hero-leaf" style="bottom:18%;left:18%;width:45px;animation-delay:3s" viewBox="0 0 80 120" fill="white"><path d="M40 5 C20 5 5 25 5 55 C5 85 20 110 40 115 C60 110 75 85 75 55 C75 25 60 5 40 5Z"/></svg>
+
+    <!-- Blur orbs -->
+    <div class="blur-orb blur-orb-amber" style="width:500px;height:500px;top:-150px;right:-100px;position:absolute;"></div>
+    <div class="blur-orb blur-orb-green" style="width:400px;height:400px;bottom:-80px;left:-80px;position:absolute;"></div>
+
+    <div class="container position-relative" style="z-index:2">
       <div class="row align-items-center gy-4">
         <div class="col-lg-7">
-          <span class="badge badge-amber mb-3 fs-6"><i class="fa-solid fa-mountain-sun me-1"></i> Kebun Teh Wonosari 1.100 MDPL</span>
-          <h1 class="display-4 fw-bold text-white mb-3" style="line-height: 1.2;">
-            Pengalaman Outbound & Team Building Terbaik di Kebun Teh Malang
+          <!-- Glass badge -->
+          <div class="hero-glass-badge mb-3">
+            <i class="fa-solid fa-mountain-sun"></i>
+            Kebun Teh Wonosari 1.100 MDPL
+          </div>
+          <h1 class="display-4 fw-bold text-white mb-3" style="line-height:1.18;text-shadow:0 3px 16px rgba(0,0,0,0.3);">
+            Pengalaman Outbound &amp; Team Building Terbaik di Kebun Teh Malang
           </h1>
-          <p class="lead text-white-50 mb-4" style="font-size: 1.15rem; line-height: 1.7;">
+          <p class="lead text-white mb-4" style="font-size:1.12rem;line-height:1.75;opacity:0.88;">
             Padukan kebersamaan tim, keberanian, dan kesegaran udara pegunungan alami di area hijau seluas 1.140 hektar. Tempat ideal untuk Perusahaan, Sekolah, dan Keluarga.
           </p>
           <div class="d-flex flex-wrap gap-3">
-            <a href="paket.html" class="btn btn-amber text-dark px-4 py-3 fs-6">
+            <a href="paket.html" class="btn btn-amber text-dark px-5 py-3 fs-6">
               <i class="fa-solid fa-boxes-packing"></i> Lihat Pilihan Paket
             </a>
-            <a href="fasilitas.html" class="btn btn-outline-light px-4 py-3 rounded-pill fw-semibold" style="border-width: 2px;">
+            <a href="fasilitas.html" class="btn btn-outline-light px-5 py-3 rounded-pill fw-semibold" style="border-width:2px;">
               <i class="fa-solid fa-building"></i> Jelajahi Fasilitas
             </a>
           </div>
@@ -65,36 +79,39 @@
         <div class="col-lg-5">
           <div class="row g-3">
             <div class="col-6">
-              <div class="p-4 rounded-4 text-center bg-white bg-opacity-10 border border-white border-opacity-20 backdrop-blur">
+              <div class="hero-stat-card">
                 <h2 class="display-5 fw-bold text-warning mb-1" data-counter data-target="98">0</h2>
-                <p class="small text-white-50 m-0 fw-medium">% Peserta Puas</p>
+                <p class="small text-white m-0 fw-medium" style="opacity:0.82;">% Peserta Puas</p>
               </div>
             </div>
             <div class="col-6">
-              <div class="p-4 rounded-4 text-center bg-white bg-opacity-10 border border-white border-opacity-20 backdrop-blur">
+              <div class="hero-stat-card">
                 <h2 class="display-5 fw-bold text-warning mb-1" data-counter data-target="500">0</h2>
-                <p class="small text-white-50 m-0 fw-medium">+ Rombongan / Tahun</p>
+                <p class="small text-white m-0 fw-medium" style="opacity:0.82;">+ Rombongan / Tahun</p>
               </div>
             </div>
             <div class="col-12">
-              <div class="p-4 rounded-4 text-center bg-white bg-opacity-10 border border-white border-opacity-20 backdrop-blur">
+              <div class="hero-stat-card">
                 <h2 class="display-6 fw-bold text-warning mb-1"><span data-counter data-target="1140">0</span> Ha</h2>
-                <p class="small text-white-50 m-0 fw-medium">Kawasan Perkebunan Teh Hijau Wonosari</p>
+                <p class="small text-white m-0 fw-medium" style="opacity:0.82;">Kawasan Perkebunan Teh Hijau Wonosari</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Smooth fade into next section -->
+    <div class="hero-fade-bottom"></div>
   </section>
 
   <!-- About Section -->
-  <section class="py-5 bg-white">
+  <section class="py-5 section-white position-relative overflow-hidden">
+    <div class="blur-orb blur-orb-green" style="width:360px;height:360px;top:-80px;right:-80px;position:absolute;"></div>
     <div class="container" data-reveal>
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
           <div class="position-relative">
-            <img src="assets/img/Wonosari_tea_garden_Malang_202608051844.jpeg" alt="Tentang Wisata Agro Wonosari" class="img-fluid rounded-4 shadow-lg w-100" style="max-height: 400px; object-fit: cover;">
+            <img src="assets/img/Wonosari_tea_garden_Malang_202608051844.jpeg" alt="Tentang Wisata Agro Wonosari" class="img-fluid rounded-4 shadow-lg w-100 img-premium" style="max-height: 400px; object-fit: cover;">
             <div class="position-absolute bottom-0 end-0 bg-warning text-dark p-3 m-3 rounded-3 shadow fw-bold text-center">
               <span class="fs-3 d-block leading-none">1875</span>
               <small class="text-uppercase" style="font-size: 0.7rem;">Berdiri Sejak</small>
@@ -120,8 +137,9 @@
     </div>
   </section>
 
-  <!-- 6 Alasan Memilih Outbound Wonosari Section (Revised with Themed Responsive Cards) -->
-  <section class="py-5 bg-light">
+  <!-- 6 Alasan Memilih Outbound Wonosari Section -->
+  <section class="py-5 section-soft section-pattern position-relative overflow-hidden">
+    <div class="blur-orb blur-orb-amber" style="width:280px;height:280px;top:30px;left:-60px;position:absolute;"></div>
     <div class="container">
       
       <div class="row text-center mb-5" data-reveal>
@@ -216,9 +234,10 @@
     </div>
   </section>
 
-  <!-- Package Preview Section (Revised with Standard Proportional Image Height) -->
-  <section class="py-5 bg-white">
-    <div class="container">
+  <!-- Package Preview Section -->
+  <section class="py-5 section-white position-relative overflow-hidden">
+    <div class="blur-orb blur-orb-green" style="width:300px;height:300px;bottom:-60px;right:-60px;position:absolute;"></div>
+    <div class="container" style="position:relative;z-index:1">
       
       <div class="d-flex flex-wrap justify-content-between align-items-end mb-4" data-reveal>
         <div>
@@ -376,8 +395,9 @@
   </section>
 
   <!-- FAQ Accordion Section -->
-  <section class="py-5 bg-light">
-    <div class="container" data-reveal>
+  <section class="py-5 section-soft section-pattern position-relative overflow-hidden">
+    <div class="blur-orb blur-orb-amber" style="width:260px;height:260px;top:-40px;left:-40px;position:absolute;"></div>
+    <div class="container" style="position:relative;z-index:1" data-reveal>
       <div class="text-center mb-5">
         <span class="badge badge-amber mb-2"><i class="fa-solid fa-circle-question me-1"></i> FAQ</span>
         <h2 class="fw-bold text-dark">Pertanyaan Sering Diajukan</h2>
