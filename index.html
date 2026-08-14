@@ -55,7 +55,7 @@
 
     <div class="container position-relative" style="z-index:2">
       <div class="row align-items-center gy-4">
-        <div class="col-lg-7">
+        <div class="col-lg-9">
           <!-- Glass badge -->
           <div class="hero-glass-badge mb-3">
             <i class="fa-solid fa-mountain-sun"></i>
@@ -64,38 +64,16 @@
           <h1 class="display-4 fw-bold text-white mb-3" style="line-height:1.18;text-shadow:0 3px 16px rgba(0,0,0,0.3);">
             Pengalaman Outbound &amp; Team Building Terbaik di Kebun Teh Malang
           </h1>
-          <p class="lead text-white mb-4" style="font-size:1.12rem;line-height:1.75;opacity:0.88;">
+          <p class="lead text-white mb-4" style="font-size:1.12rem;line-height:1.75;opacity:0.88;max-width:780px;">
             Padukan kebersamaan tim, keberanian, dan kesegaran udara pegunungan alami di area hijau seluas 1.140 hektar. Tempat ideal untuk Perusahaan, Sekolah, dan Keluarga.
           </p>
           <div class="d-flex flex-wrap gap-3">
-            <a href="paket.html" class="btn btn-amber text-dark px-5 py-3 fs-6">
+            <a href="paket.html" class="btn btn-amber text-dark px-5 py-3 fs-6 hero-btn-primary">
               <i class="fa-solid fa-boxes-packing"></i> Lihat Pilihan Paket
             </a>
-            <a href="fasilitas.html" class="btn btn-outline-light px-5 py-3 rounded-pill fw-semibold" style="border-width:2px;">
+            <a href="fasilitas.html" class="btn btn-outline-light px-5 py-3 rounded-pill fw-semibold hero-btn-secondary" style="border-width:2px;">
               <i class="fa-solid fa-building"></i> Jelajahi Fasilitas
             </a>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="row g-3">
-            <div class="col-6">
-              <div class="hero-stat-card">
-                <h2 class="display-5 fw-bold text-warning mb-1" data-counter data-target="98">0</h2>
-                <p class="small text-white m-0 fw-medium" style="opacity:0.82;">% Peserta Puas</p>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="hero-stat-card">
-                <h2 class="display-5 fw-bold text-warning mb-1" data-counter data-target="500">0</h2>
-                <p class="small text-white m-0 fw-medium" style="opacity:0.82;">+ Rombongan / Tahun</p>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="hero-stat-card">
-                <h2 class="display-6 fw-bold text-warning mb-1"><span data-counter data-target="1140">0</span> Ha</h2>
-                <p class="small text-white m-0 fw-medium" style="opacity:0.82;">Kawasan Perkebunan Teh Hijau Wonosari</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -110,9 +88,9 @@
     <div class="container" data-reveal>
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
-          <div class="position-relative">
-            <img src="assets/img/Wonosari_tea_garden_Malang_202608051844.jpeg" alt="Tentang Wisata Agro Wonosari" class="img-fluid rounded-4 shadow-lg w-100 img-premium" style="max-height: 400px; object-fit: cover;">
-            <div class="position-absolute bottom-0 end-0 bg-warning text-dark p-3 m-3 rounded-3 shadow fw-bold text-center">
+          <div class="card border-0 shadow-lg rounded-4 overflow-hidden position-relative p-2 bg-white">
+            <img src="assets/img/Wonosari_tea_garden_Malang_202608051844.webp" alt="Tentang Wisata Agro Wonosari" class="img-fluid rounded-3 w-100" style="max-height: 350px; object-fit: cover;">
+            <div class="position-absolute bottom-0 end-0 bg-warning text-dark p-3 m-4 rounded-3 shadow fw-bold text-center">
               <span class="fs-3 d-block leading-none">1875</span>
               <small class="text-uppercase" style="font-size: 0.7rem;">Berdiri Sejak</small>
             </div>
@@ -129,7 +107,7 @@
           </p>
           <div class="pt-2">
             <a href="tentang.html" class="btn btn-primary-custom">
-              Baca Sejarah & Profil Selengkapnya <i class="fa-solid fa-arrow-right ms-1"></i>
+              Baca Sejarah &amp; Profil Selengkapnya <i class="fa-solid fa-arrow-right ms-1"></i>
             </a>
           </div>
         </div>
@@ -336,8 +314,9 @@
       </div>
 
       <div class="row g-4">
+        <!-- Testimonial 1 -->
         <div class="col-md-4">
-          <div class="p-4 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 h-100 d-flex flex-direction-column">
+          <div class="p-4 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 h-100 d-flex flex-column">
             <div class="text-warning mb-3">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
@@ -345,7 +324,10 @@
               "Acara corporate gathering perusahaan kami berjalan sukses besar! Lapangan sangat bersih, udaranya dingin sejuk, dan tim instruktur outbound Wonosari sangat komunikatif."
             </p>
             <div class="d-flex align-items-center gap-3 pt-3 border-top border-white border-opacity-10">
-              <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center fw-bold" style="width: 42px; height: 42px;">PT</div>
+              <div class="testimonial-avatar-frame">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Bapak Heru Prasetyo" class="testimonial-avatar-img">
+                <span class="testimonial-verified-check"><i class="fa-solid fa-check"></i></span>
+              </div>
               <div>
                 <h6 class="fw-bold text-white m-0">Bapak Heru Prasetyo</h6>
                 <small class="text-white-50">HRD PT. Surya Mandiri Surabaya</small>
@@ -354,8 +336,9 @@
           </div>
         </div>
 
+        <!-- Testimonial 2 -->
         <div class="col-md-4">
-          <div class="p-4 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 h-100 d-flex flex-direction-column">
+          <div class="p-4 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 h-100 d-flex flex-column">
             <div class="text-warning mb-3">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
@@ -363,7 +346,10 @@
               "Anak-anak murid SD sangat senang saat memetik teh dan naik flying fox. Tempatnya aman, luas, dan fasilitas toilet serta tempat makan sangat memadai."
             </p>
             <div class="d-flex align-items-center gap-3 pt-3 border-top border-white border-opacity-10">
-              <div class="rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center fw-bold" style="width: 42px; height: 42px;">SD</div>
+              <div class="testimonial-avatar-frame">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&q=80" alt="Ibu Nurul Hidayah" class="testimonial-avatar-img">
+                <span class="testimonial-verified-check"><i class="fa-solid fa-check"></i></span>
+              </div>
               <div>
                 <h6 class="fw-bold text-white m-0">Ibu Nurul Hidayah</h6>
                 <small class="text-white-50">Kepala Sekolah SD Al-Azhar Malang</small>
@@ -372,8 +358,9 @@
           </div>
         </div>
 
+        <!-- Testimonial 3 -->
         <div class="col-md-4">
-          <div class="p-4 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 h-100 d-flex flex-direction-column">
+          <div class="p-4 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 h-100 d-flex flex-column">
             <div class="text-warning mb-3">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
@@ -381,9 +368,12 @@
               "Acara family gathering keluarga besar berjalan hangat. Anak-anak berenang di kolam pegunungan sementara orangtua menikmati teh hangat Wonosari."
             </p>
             <div class="d-flex align-items-center gap-3 pt-3 border-top border-white border-opacity-10">
-              <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center fw-bold" style="width: 42px; height: 42px;">FG</div>
+              <div class="testimonial-avatar-frame">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Bapak Sastro Wardoyo" class="testimonial-avatar-img">
+                <span class="testimonial-verified-check"><i class="fa-solid fa-check"></i></span>
+              </div>
               <div>
-                <h6 class="fw-bold text-white m-0">Keluarga Besar Sastro</h6>
+                <h6 class="fw-bold text-white m-0">Bapak Sastro Wardoyo</h6>
                 <small class="text-white-50">Peserta Family Gathering Kediri</small>
               </div>
             </div>

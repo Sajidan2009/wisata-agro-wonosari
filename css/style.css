@@ -276,7 +276,7 @@ nav.navbar-custom .navbar-brand .brand-sub {
       rgba(27, 59, 43, 0.82) 40%,
       rgba(46, 125, 50, 0.70) 100%
     ),
-    url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1800&q=85')
+    url('../assets/img/Wonosari_tea_plantation_landscape_202608051845.webp')
       center 30% / cover no-repeat;
   color: #fff;
   padding: 110px 0 90px;
@@ -315,8 +315,8 @@ nav.navbar-custom .navbar-brand .brand-sub {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, var(--bg-white));
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.7));
   pointer-events: none;
   z-index: 2;
 }
@@ -372,6 +372,89 @@ nav.navbar-custom .navbar-brand .brand-sub {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   33%       { transform: translateY(-12px) rotate(8deg); }
   66%       { transform: translateY(8px) rotate(-5deg); }
+}
+
+/* ──────────────────────────────────────────────────────────
+   5b. TEA GARDEN PHOTO BANNER (replaces About text section)
+   ────────────────────────────────────────────────────────── */
+.tea-garden-banner {
+  position: relative;
+  height: 460px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.tea-garden-banner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.tea-garden-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  z-index: 1;
+}
+
+.tea-garden-banner-caption {
+  position: relative;
+  z-index: 2;
+  padding: 32px 40px;
+  color: #fff;
+}
+
+.tea-banner-badge {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  z-index: 3;
+  background: var(--accent-amber);
+  color: #1A2E1D;
+  padding: 12px 18px;
+  border-radius: 14px;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+  line-height: 1.2;
+}
+
+/* Mobile responsive for tea garden banner */
+@media (max-width: 576px) {
+  .tea-garden-banner {
+    height: 340px;
+  }
+  .tea-garden-banner-caption {
+    padding: 20px 20px;
+  }
+  .tea-banner-badge {
+    top: 16px;
+    right: 16px;
+    padding: 8px 12px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   5c. HERO BUTTONS – Mobile Responsive
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    padding: 10px 22px !important;
+    font-size: 0.88rem !important;
+  }
+  .hero-btn-primary i,
+  .hero-btn-secondary i {
+    font-size: 0.88rem;
+  }
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -1233,7 +1316,7 @@ nav.navbar-custom .navbar-brand .brand-sub {
 .fas-dir-hero {
   position: relative;
   background: linear-gradient(160deg, rgba(12, 40, 22, 0.88) 0%, rgba(27, 59, 43, 0.82) 50%, rgba(46, 125, 50, 0.75) 100%),
-    url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1800&q=85') center 35% / cover no-repeat;
+    url('../assets/img/Wonosari_tea_plantation_landscape_202608051845.webp') center 35% / cover no-repeat;
   color: #ffffff;
   padding: 85px 0 65px;
   text-align: center;
@@ -1505,4 +1588,147 @@ nav.navbar-custom .navbar-brand .brand-sub {
   border: 1px solid rgba(76, 175, 80, 0.12);
 }
 
+/* ──────────────────────────────────────────────────────────
+   19. HERO PERSON SHOWCASE & TESTIMONIAL AVATARS
+   ────────────────────────────────────────────────────────── */
+/* Hero Person Card */
+.hero-person-card {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s ease;
+}
 
+.hero-person-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 193, 7, 0.4);
+}
+
+.hero-person-avatar-wrap {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  min-width: 110px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent-amber), var(--primary-green));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hero-person-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+
+.hero-person-badge-pill {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-amber);
+  color: #1A2E1D;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-person-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+}
+
+.hero-person-title {
+  color: var(--accent-amber);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hero-person-quote {
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  margin-bottom: 14px;
+  border-left: 3px solid var(--accent-amber);
+}
+
+.hero-stat-chips {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hero-stat-chip {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Testimonial Avatar Photo Frame */
+.testimonial-avatar-frame {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--accent-amber), var(--primary-green));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.testimonial-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.testimonial-verified-check {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: #25D366;
+  color: #ffffff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #142a1e;
+}
