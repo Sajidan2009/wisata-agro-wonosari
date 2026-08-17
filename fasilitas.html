@@ -4,10 +4,298 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fasilitas Lengkap - Wisata Agro Wonosari Malang</title>
-  <meta name="description" content="Fasilitas lengkap Wisata Agro Wonosari: Tea Walk, Kolam Renang Air Hangat, Flying Fox, Paintball, Hotel, Camping Ground, Pabrik Teh, dan banyak lagi." />
+  <meta name="description" content="Fasilitas lengkap Wisata Agro Wonosari: Tea Walk, Kolam Renang Air Hangat, Flying Fox, Paintball, Hotel, Camping Ground, Pabrik Teh, dan fasilitas umum terawat." />
+  
+  <!-- CSS Dependencies -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Custom Fasilitas Styles (Referenced Layout Aesthetics) */
+    .fas-hero-v2 {
+      background: linear-gradient(135deg, rgba(27,59,43,0.88) 0%, rgba(46,125,50,0.82) 100%), url('assets/img/Green_field_for_corporate_gathering_202608051855.webp') center/cover no-repeat;
+      padding: 85px 0 75px;
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+    }
+    
+    .fas-grid-card {
+      background: #ffffff;
+      border: 1px solid rgba(76, 175, 80, 0.16);
+      border-radius: var(--radius-lg, 20px);
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(27, 59, 43, 0.07);
+      transition: transform 0.35s var(--ease, ease), box-shadow 0.35s ease, border-color 0.35s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .fas-grid-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(46, 125, 50, 0.14);
+      border-color: rgba(76, 175, 80, 0.35);
+    }
+
+    .fas-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+      background: #e9f5ea;
+    }
+
+    .fas-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .fas-grid-card:hover .fas-img-wrapper img {
+      transform: scale(1.06);
+    }
+
+    /* Floating Circle Icon Badge on top right of card image */
+    .fas-circle-icon-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      box-shadow: 0 6px 16px rgba(46, 125, 50, 0.35);
+      border: 2px solid #ffffff;
+      z-index: 2;
+    }
+
+    .fas-card-body {
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .fas-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-dark, #1A2E1D);
+      margin-bottom: 8px;
+    }
+
+    .fas-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted, #6C757D);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* Bullet Feature List with Checkmark Icons */
+    .fas-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .fas-feature-list li {
+      font-size: 0.85rem;
+      color: var(--text-body, #374340);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .fas-feature-list li i {
+      color: #4CAF50;
+      font-size: 0.95rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Service List Cards (Layanan Lengkap Tanpa Ribet) */
+    .service-item-card {
+      background: #ffffff;
+      border: 1px solid rgba(76, 175, 80, 0.16);
+      border-radius: 16px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(46, 125, 50, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .service-item-card:hover {
+      transform: translateX(6px);
+      box-shadow: 0 10px 28px rgba(46, 125, 50, 0.12);
+      border-color: rgba(76, 175, 80, 0.35);
+    }
+
+    .service-icon-box {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 12px;
+      background: #E8F5E9;
+      color: #2E7D32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .service-item-body {
+      flex-grow: 1;
+    }
+
+    .service-item-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-dark, #1A2E1D);
+      margin-bottom: 4px;
+    }
+
+    .service-item-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted, #6C757D);
+      line-height: 1.55;
+      margin: 0 0 8px 0;
+    }
+
+    /* Rule Number Cards */
+    .rule-number-card {
+      background: #ffffff;
+      border: 1px solid rgba(76, 175, 80, 0.15);
+      border-radius: 16px;
+      padding: 22px;
+      height: 100%;
+      box-shadow: 0 4px 16px rgba(46, 125, 50, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .rule-number-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(46, 125, 50, 0.12);
+      border-color: rgba(76, 175, 80, 0.3);
+    }
+
+    .rule-number-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #E8F5E9;
+      color: #2E7D32;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .rule-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-dark, #1A2E1D);
+      margin-bottom: 6px;
+    }
+
+    .rule-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted, #6C757D);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Call to Action Banner */
+    .cta-banner-v2 {
+      background: linear-gradient(135deg, #1B3B2B 0%, #2E7D32 100%);
+      border-radius: 24px;
+      padding: 50px 24px;
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(27, 59, 43, 0.2);
+    }
+
+    .cta-banner-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #4CAF50;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Filter Pills & Search Input Bar */
+    .fas-nav-pill {
+      border: 1px solid rgba(76, 175, 80, 0.25);
+      background: #ffffff;
+      color: var(--text-dark, #1A2E1D);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .fas-nav-pill:hover, .fas-nav-pill.active {
+      background: #2E7D32;
+      color: #ffffff;
+      border-color: #2E7D32;
+      box-shadow: 0 4px 14px rgba(46, 125, 50, 0.25);
+    }
+
+    .fas-dir-search {
+      position: relative;
+      min-width: 250px;
+    }
+    .fas-dir-search input {
+      width: 100%;
+      padding: 9px 16px 9px 38px;
+      border-radius: 50px;
+      border: 1px solid rgba(76, 175, 80, 0.25);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .fas-dir-search input:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.18);
+    }
+    .fas-dir-search i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6C757D;
+      font-size: 0.88rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -38,18 +326,18 @@
     </div>
   </nav>
 
-  <!-- Hero Section (Simple & Elegant) -->
-  <section class="fas-dir-hero">
+  <!-- Hero Header Section -->
+  <section class="fas-hero-v2">
     <div class="container position-relative" style="z-index:2">
-      <span class="badge badge-amber mb-3" data-reveal><i class="fa-solid fa-leaf me-1"></i> Sarana &amp; Prasarana Lengkap</span>
-      <h1 class="display-5 fw-bold mb-3" data-reveal>Fasilitas Agro Wonosari</h1>
+      <span class="badge badge-amber mb-3" data-reveal><i class="fa-solid fa-compass me-1"></i> FASILITAS KAMI</span>
+      <h1 class="display-5 fw-bold mb-3" data-reveal>Fasilitas <span class="text-warning">Lengkap &amp; Terawat</span></h1>
       <p class="lead mx-auto mb-0" style="max-width:720px;font-size:1.02rem;opacity:0.92;line-height:1.7;" data-reveal>
-        Agro Wonosari menyediakan berbagai sarana pendukung yang dapat menunjang kegiatan wisata, outbound, edukasi, gathering, hingga kebutuhan acara rombongan di tengah sejuknya kebun teh 1.140 hektar.
+        Nikmati pengalaman outbound &amp; wisata yang menyatu dengan alam kebun teh Wonosari 1.140 hektar. Semua sarana dijaga kebersihan, kerapian, &amp; kenyamanannya demi kepuasan Anda.
       </p>
     </div>
   </section>
 
-  <!-- Overview & Simple Stats -->
+  <!-- Overview & Quick Stats Bar -->
   <section class="py-4 section-white border-bottom">
     <div class="container">
       <div class="row align-items-center g-4">
@@ -63,25 +351,25 @@
         <div class="col-lg-6" data-reveal>
           <div class="row g-3 text-center">
             <div class="col-6 col-sm-3">
-              <div class="p-3 rounded-3" style="background:var(--bg-softer);border:1px solid rgba(76,175,80,0.14);">
+              <div class="p-3 rounded-3" style="background:var(--bg-softer, #F4FAF2);border:1px solid rgba(76,175,80,0.14);">
                 <div class="fw-bold text-success" style="font-size:1.55rem;font-family:'Outfit',sans-serif;">20+</div>
                 <div class="text-muted" style="font-size:0.78rem;">Jenis Fasilitas</div>
               </div>
             </div>
             <div class="col-6 col-sm-3">
-              <div class="p-3 rounded-3" style="background:var(--bg-softer);border:1px solid rgba(76,175,80,0.14);">
+              <div class="p-3 rounded-3" style="background:var(--bg-softer, #F4FAF2);border:1px solid rgba(76,175,80,0.14);">
                 <div class="fw-bold text-success" style="font-size:1.55rem;font-family:'Outfit',sans-serif;">1.140 Ha</div>
                 <div class="text-muted" style="font-size:0.78rem;">Area Kebun Teh</div>
               </div>
             </div>
             <div class="col-6 col-sm-3">
-              <div class="p-3 rounded-3" style="background:var(--bg-softer);border:1px solid rgba(76,175,80,0.14);">
+              <div class="p-3 rounded-3" style="background:var(--bg-softer, #F4FAF2);border:1px solid rgba(76,175,80,0.14);">
                 <div class="fw-bold text-success" style="font-size:1.55rem;font-family:'Outfit',sans-serif;">300+</div>
                 <div class="text-muted" style="font-size:0.78rem;">Seat Resto</div>
               </div>
             </div>
             <div class="col-6 col-sm-3">
-              <div class="p-3 rounded-3" style="background:var(--bg-softer);border:1px solid rgba(76,175,80,0.14);">
+              <div class="p-3 rounded-3" style="background:var(--bg-softer, #F4FAF2);border:1px solid rgba(76,175,80,0.14);">
                 <div class="fw-bold text-success" style="font-size:1.55rem;font-family:'Outfit',sans-serif;">24 Jam</div>
                 <div class="text-muted" style="font-size:0.78rem;">Keamanan Area</div>
               </div>
@@ -93,16 +381,25 @@
   </section>
 
   <!-- ===================================================
-       MAIN SECTION: Category-Based Facility Directory
+       SECTION 1: Main Facilities Grid ("Semua yang Anda Butuhkan")
        =================================================== -->
   <section class="py-5 section-soft">
     <div class="container">
 
-      <!-- Category Navigation Sub-Nav & Minimal Search -->
+      <!-- Section Title Header -->
+      <div class="text-center mb-5" data-reveal>
+        <span class="section-label mb-2"><i class="fa-solid fa-layer-group me-1"></i> FASILITAS UTAMA</span>
+        <h2 class="fw-bold display-6 mb-3">Semua yang Anda <span class="text-success">Butuhkan</span></h2>
+        <p class="text-secondary mx-auto mb-0" style="max-width:640px;font-size:0.95rem;line-height:1.7;">
+          Banyak pilihan sarana untuk outbound &amp; wisata yang dirancang khusus untuk kenyamanan pengunjung &amp; rombongan di lereng Gunung Arjuno.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills & Search Bar -->
       <div class="fas-dir-nav-bar mb-5 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3" data-reveal>
         <div class="d-flex flex-wrap align-items-center gap-2 w-100 w-lg-auto overflow-x-auto pb-1 pb-lg-0" style="scrollbar-width:none;">
           <button type="button" class="fas-nav-pill active" data-filter="all">
-            <i class="fa-solid fa-border-all"></i> Semua Fasilitas
+            <i class="fa-solid fa-border-all me-1"></i> Semua Fasilitas
           </button>
           <button type="button" class="fas-nav-pill" data-filter="rekreasi">
             🌿 Rekreasi &amp; Alam
@@ -125,159 +422,169 @@
 
       <!-- DIRECTORY CATEGORY 1: 🌿 Rekreasi & Alam -->
       <div class="fas-cat-section mb-5" data-category="rekreasi" data-reveal>
-        <div class="fas-cat-header">
-          <div class="fas-cat-icon"><i class="fa-solid fa-tree"></i></div>
-          <div>
-            <h3 class="fas-cat-title">🌿 Rekreasi &amp; Alam</h3>
-          </div>
+        <div class="d-flex align-items-center gap-2 mb-4 pb-2 border-bottom border-success border-opacity-25">
+          <div class="p-2 rounded-3 bg-success text-white"><i class="fa-solid fa-tree fs-5"></i></div>
+          <h3 class="fw-bold text-dark m-0" style="font-size:1.35rem;">🌿 Rekreasi &amp; Alam</h3>
         </div>
 
-        <div class="row g-3 g-md-4">
-          <!-- Item 1: Jalur Tea Walk -->
+        <div class="row g-4">
+          <!-- Card 1: Toilet & Kamar Mandi -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-route"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Jalur Tea Walk</h5>
-                    <p class="fas-dir-desc">Jalur trekking ringan ±2 km menyusuri kebun teh 1.100 MDPL dengan panorama Gunung Arjuno.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/Restroom_and_shower_facility_out_202608051857.webp" alt="Toilet & Kamar Mandi">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-restroom"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Jalur Tea Walk"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Toilet &amp; Kamar Mandi Clean</h5>
+                <p class="fas-card-desc fas-dir-desc">Fasilitas sanitasi bersih &amp; kamar bilas terawat yang tersebar di 5+ titik lokasi strategis.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Sanitasi &amp; kamar bilas terawat rutin</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Air segar alami pegunungan melimpah</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Tersebar di area lapangan &amp; resto</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Toilet &amp; Kamar Mandi Clean"
                   data-cat="🌿 Rekreasi &amp; Alam"
-                  data-img="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Jalur trekking ringan menyusuri hamparan kebun teh sejuk pegunungan 1.100 MDPL. Menampilkan panorama Gunung Arjuno, cocok untuk semua usia bersama pemandu lokal."
-                  data-specs="Jalur trekking santai ±2 km;Pemandu lokal ramah &amp; berpengalaman;Spot foto panorama Gunung Arjuno;Cocok untuk semua usia &amp; keluarga">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/Restroom_and_shower_facility_out_202608051857.webp"
+                  data-desc="Fasilitas toilet dan kamar bilas bersih yang dijaga rutin oleh petugas kebersihan untuk kenyamanan seluruh pengunjung."
+                  data-specs="Tersebar di 5+ titik area utama;Air bersih alami melimpah;Kamar ganti &amp; bilas terpisah;Pembersihan &amp; kontrol berkala">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 2: Kolam Renang Air Hangat -->
+          <!-- Card 2: Musholla Luas -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-water-ladder"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Kolam Renang Air Hangat</h5>
-                    <p class="fas-dir-desc">Kolam renang berfasilitas air hangat alami dari sumber mata air Pegunungan Arjuno.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/Wonosari_tea_garden_Malang_202608051844.webp" alt="Musholla Luas">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-mosque"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Musholla Luas &amp; Sejuk</h5>
+                <p class="fas-card-desc fas-dir-desc">Sarana ibadah bersih dengan tempat wudhu terpisah pria-wanita &amp; perlengkapan lengkap.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Tempat wudhu pria &amp; wanita terpisah</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Karpet bersih &amp; mukena/sarung ada</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Ruangan sejuk alami pegunungan</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Musholla Luas &amp; Sejuk"
+                  data-cat="🌿 Rekreasi &amp; Alam"
+                  data-img="assets/img/Wonosari_tea_garden_Malang_202608051844.webp"
+                  data-desc="Musholla bersih &amp; nyaman yang tersebar di titik utama untuk kemudahan ibadah sholat berjamaah rombongan."
+                  data-specs="Tempat wudhu terpisah pria &amp; wanita;Sajadah, sarung &amp; mukena bersih;Ruangan luas &amp; karpet bersih terawat;Lokasi dekat resto &amp; penginapan">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Jalur Tea Walk -->
+          <div class="col-lg-4 col-md-6 fas-dir-col">
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Jalur Tea Walk">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-route"></i></div>
+              </div>
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Jalur Tea Walk Kebun Teh</h5>
+                <p class="fas-card-desc fas-dir-desc">Jalur trekking ringan ±2 km menyusuri kebun teh 1.100 MDPL dengan panorama Gunung Arjuno.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Jalur trekking aman &amp; pemandangan asri</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Cocok untuk segala usia &amp; keluarga</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Spot foto jembatan kayu &amp; bukit</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Jalur Tea Walk Kebun Teh"
+                  data-cat="🌿 Rekreasi &amp; Alam"
+                  data-img="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+                  data-desc="Jalur trekking ringan menyusuri hamparan kebun teh sejuk pegunungan 1.100 MDPL bersama pemandu lokal."
+                  data-specs="Jalur trekking santai ±2 km;Pemandu lokal ramah;Spot foto panorama Gunung Arjuno;Cocok untuk semua usia &amp; keluarga">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Kolam Renang Air Hangat -->
+          <div class="col-lg-4 col-md-6 fas-dir-col">
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Kolam Renang Air Hangat">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-water-ladder"></i></div>
+              </div>
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Kolam Renang Air Hangat</h5>
+                <p class="fas-card-desc fas-dir-desc">Kolam renang berfasilitas air hangat alami yang bersumber dari Pegunungan Arjuno.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Sumber mata air hangat alami</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Kolam terpisah anak &amp; dewasa</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Kamar bilas &amp; ganti baju bersih</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
                   data-title="Kolam Renang Air Hangat"
                   data-cat="🌿 Rekreasi &amp; Alam"
                   data-img="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Kolam renang berfasilitas air hangat alami yang bersumber dari Gunung Arjuno. Ideal untuk relaksasi dan kebugaran tubuh rombongan setelah outbound."
-                  data-specs="Mata air hangat alami pegunungan;Kolam terpisah anak &amp; dewasa;Kamar bilas &amp; ganti baju bersih;Penjaga kolam siaga">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-desc="Kolam renang berfasilitas air hangat alami dari Gunung Arjuno. Ideal untuk relaksasi tubuh rombongan setelah outbound."
+                  data-specs="Mata air hangat alami;Kolam anak &amp; dewasa;Kamar bilas &amp; ganti bersih;Penjaga siaga keselamatan">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 3: Taman Bermain Anak -->
+          <!-- Card 5: Camping Ground -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-child"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Taman Bermain Anak</h5>
-                    <p class="fas-dir-desc">Area permainan hijau outdoor berpagar aman dengan ayunan, perosotan, &amp; jungle gym.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/Camping_ground_and_event_area_202608051905.webp" alt="Camping Ground">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-campground"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Taman Bermain Anak"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Camping Ground Rumput Hijau</h5>
+                <p class="fas-card-desc fas-dir-desc">Lahan berkemah rumput hijau sejuk berkapasitas puluhan tenda dome dengan MCK &amp; listrik.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Lahan rumput rata &amp; pemandangan alam</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Paket sewa tenda dome &amp; matras</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Titik colokan listrik &amp; MCK dekat</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Camping Ground Rumput Hijau"
                   data-cat="🌿 Rekreasi &amp; Alam"
-                  data-img="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Taman hijau terbuka aman bagi anak-anak usia 3-12 tahun. Dilengkapi aneka sarana ketangkasan anak dengan material aman dan terawat."
-                  data-specs="Area terbuka rumput hijau berpagar;Perosotan, ayunan &amp; jungkat-jungkit;Material ramah anak &amp; anti-karat;Tempat santai untuk pengawasan orang tua">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/Camping_ground_and_event_area_202608051905.webp"
+                  data-desc="Lahan berkemah berumput hijau yang asri dan sejuk. Dilengkapi opsi sewa tenda, listrik lapangan, dan pengawasan 24 jam."
+                  data-specs="Lahan rumput asri sejuk;Paket sewa tenda dome &amp; sleeping bag;MCK bersih dekat area kemah;Listrik &amp; pengawasan 24 jam">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 4: Wisata Edukasi Pabrik Teh -->
+          <!-- Card 6: Area BBQ & Api Unggun -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-industry"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Wisata Edukasi Pabrik Teh</h5>
-                    <p class="fas-dir-desc">Tur panduan belajar proses pengolahan teh dari pemetikan hingga pengemasan era 1875.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/Camping_ground_and_event_area_202608051905.webp" alt="Area BBQ & Api Unggun">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-fire"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Wisata Edukasi Pabrik Teh"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Area BBQ &amp; Api Unggun</h5>
+                <p class="fas-card-desc fas-dir-desc">Lapangan melingkar untuk keakraban malam hari dengan hangatnya api unggun &amp; jagung bakar.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Titik api unggun khusus &amp; aman</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Paket kayu bakar &amp; alat memanggang</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Cocok untuk acara keakraban malam</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Area BBQ &amp; Api Unggun"
                   data-cat="🌿 Rekreasi &amp; Alam"
-                  data-img="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Tur sejarah dan edukasi proses pengolahan teh dari daun segar sampai teh siap seduh di pabrik bersejarah era kolonial Belanda 1875."
-                  data-specs="Pemandu tur berpengalaman dari PTPN;Melihat langsung pelayuran &amp; pengeringan;Pengalaman Tea Tasting gratis;Edukasi sejarah pabrik teh 1875">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 5: Camping Ground -->
-          <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-campground"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Camping Ground</h5>
-                    <p class="fas-dir-desc">Lahan berkemah rumput hijau sejuk berkapasitas puluhan tenda dome dengan MCK &amp; listrik.</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Camping Ground"
-                  data-cat="🌿 Rekreasi &amp; Alam"
-                  data-img="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Lahan berkemah berumput hijau yang asri dan sejuk. Dilengkapi opsi persewaan paket tenda dome, titik listrik, MCK bersih, serta pengawasan keamanan 24 jam."
-                  data-specs="Lahan berkemah rumput hijau asri;Paket sewa tenda dome, matras &amp; sleeping bag;MCK bersih dekat area kemah;Listrik lapangan &amp; pos jaga 24 jam">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 6: Area Api Unggun -->
-          <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-fire"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Area Api Unggun</h5>
-                    <p class="fas-dir-desc">Lapangan khusus melingkar untuk acara keakraban malam hari dengan suasana api unggun hangat.</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Area Api Unggun"
-                  data-cat="🌿 Rekreasi &amp; Alam"
-                  data-img="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Lapangan terbuka melingkar untuk acara malam keakraban, pertunjukan pentas seni, atau musik akustik peserta outbound di malam hari."
-                  data-specs="Titik api unggun khusus &amp; aman;Paket kayu bakar siap pakai;Ideal untuk keakraban malam &amp; penutupan acara;Pendampingan keamanan lapangan">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/Camping_ground_and_event_area_202608051905.webp"
+                  data-desc="Lapangan terbuka melingkar untuk keakraban malam, pertunjukan pentas seni, atau musik akustik peserta outbound."
+                  data-specs="Titik api unggun khusus;Paket kayu bakar siap pakai;Ideal untuk malam keakraban;Pendampingan keamanan lapangan">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
@@ -287,134 +594,88 @@
 
       <!-- DIRECTORY CATEGORY 2: 🎯 Outbound & Wahana -->
       <div class="fas-cat-section mb-5" data-category="outbound" data-reveal>
-        <div class="fas-cat-header">
-          <div class="fas-cat-icon"><i class="fa-solid fa-person-running"></i></div>
-          <div>
-            <h3 class="fas-cat-title">🎯 Outbound &amp; Wahana</h3>
-          </div>
+        <div class="d-flex align-items-center gap-2 mb-4 pb-2 border-bottom border-success border-opacity-25">
+          <div class="p-2 rounded-3 bg-success text-white"><i class="fa-solid fa-person-running fs-5"></i></div>
+          <h3 class="fw-bold text-dark m-0" style="font-size:1.35rem;">🎯 Outbound &amp; Wahana</h3>
         </div>
 
-        <div class="row g-3 g-md-4">
-          <!-- Item 7: Wahana Flying Fox -->
+        <div class="row g-4">
+          <!-- Card 7: Flying Fox -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-person-hiking"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Wahana Flying Fox</h5>
-                    <p class="fas-dir-desc">Zipline 150 meter meluncur di atas kebun teh dengan peralatan keamanan standar BNSP.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/People_participating_in_team-bui…_202608171421.webp" alt="Wahana Flying Fox">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-person-hiking"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Wahana Flying Fox"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Wahana Flying Fox 150m</h5>
+                <p class="fas-card-desc fas-dir-desc">Meluncur menyeberangi kebun teh dari ketinggian dengan peralatan keamanan standar BNSP.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Lintasan zipline sepanjang 150 meter</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Double safety sling rope &amp; harness</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Fasilitator lisensi BNSP siaga</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Wahana Flying Fox 150m"
                   data-cat="🎯 Outbound &amp; Wahana"
-                  data-img="https://images.unsplash.com/photo-1533591380388-58be847a9687?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Sensasi meluncur menyeberangi perkebunan teh dari ketinggian. Dilengkapi tali ganda keselamatan dan instruktur terlatih sertifikasi BNSP."
-                  data-specs="Lintasan zipline sepanjang 150 meter;Double safety sling rope &amp; harness;Instruktur outbound sertifikasi BNSP;Jalur khusus anak &amp; dewasa">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/People_participating_in_team-bui…_202608171421.webp"
+                  data-desc="Sensasi meluncur menyeberangi perkebunan teh dari ketinggian. Dilengkapi pengaman ganda dan fasilitator BNSP."
+                  data-specs="Lintasan zipline 150m;Double safety rope &amp; harness;Fasilitator sertifikasi BNSP;Jalur anak &amp; dewasa">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 8: Arena Paintball -->
+          <!-- Card 8: Arena Paintball -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-crosshairs"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Arena Paintball</h5>
-                    <p class="fas-dir-desc">Arena tempur taktis outdoor dengan barikade kayu &amp; vegetasi rimbun alami.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/People_participating_in_team-bui…_202608171421.webp" alt="Arena Paintball">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-crosshairs"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Arena Simulasi Paintball"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Arena Paintball Taktis</h5>
+                <p class="fas-card-desc fas-dir-desc">Simulasi pertempuran strategi outdoor dengan barikade kayu &amp; vegetasi alami kebun teh.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Arena outdoor berbarikade taktis</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Body vest, goggle &amp; senjata cat</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Wasit &amp; marshall keselamatan siaga</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Arena Paintball Taktis"
                   data-cat="🎯 Outbound &amp; Wahana"
-                  data-img="https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Simulasi pertempuran strategi luar ruangan dengan barikade kayu dan vegetasi rimbun. Lengkap dengan helm, pelindung dada, dan senjata cat peluru."
-                  data-specs="Arena outdoor berbarikade taktis;Full body vest, helm &amp; goggle pelindung;Peluru cat aman standar;Wasit pertandingan &amp; marshall keselamatan">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/People_participating_in_team-bui…_202608171421.webp"
+                  data-desc="Simulasi pertempuran strategi luar ruangan dengan barikade kayu dan vegetasi rimbun."
+                  data-specs="Arena outdoor taktis;Full body vest, helm &amp; goggle;Peluru cat aman standar;Marshall keselamatan siaga">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 9: Lapangan Outbound Luas -->
+          <!-- Card 9: Lapangan Outbound Utama -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-flag"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Lapangan Outbound Luas</h5>
-                    <p class="fas-dir-desc">Tiga area rumput luas berkapasitas besar hingga 1.000+ peserta team building &amp; gathering.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/Green_field_for_corporate_gathering_202608051855.webp" alt="Lapangan Outbound Utama">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-flag"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Lapangan Outbound Luas"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Lapangan Outbound &amp; Gathering</h5>
+                <p class="fas-card-desc fas-dir-desc">3 area rumput luas berkapasitas besar hingga 1.000+ peserta team building &amp; gathering.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>3 titik lapangan rumput hijau terpisah</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Menampung 1.000+ peserta sekaligus</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Dekat toilet, resto &amp; sound system</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Lapangan Outbound &amp; Gathering"
                   data-cat="🎯 Outbound &amp; Wahana"
-                  data-img="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Area hijau rumput luas berkapasitas besar untuk fun games, ice breaking, dan kompetisi team building rombongan perusahaan atau sekolah."
-                  data-specs="3 titik lapangan rumput terpisah;Dapat menampung 1000+ peserta sekaligus;Ground rata, aman untuk lomba &amp; games;Dekat dengan toilet &amp; sound system">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 10: Jalur Offroad & ATV -->
-          <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-truck-monster"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Jalur Offroad &amp; ATV</h5>
-                    <p class="fas-dir-desc">Lintasan tanah berbatu menyusuri kebun teh untuk petualangan ATV &amp; Jip Offroad 4x4.</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Jalur Offroad &amp; ATV"
-                  data-cat="🎯 Outbound &amp; Wahana"
-                  data-img="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Lintasan tanah dan berbatu menyusuri pemandangan perkebunan teh. Didampingi pemandu berpengalaman untuk keamanan petualangan."
-                  data-specs="Unit ATV single &amp; double;Armada Jip Offroad 4x4;Pemandu trek terlatih &amp; helm safety;Rute pemandangan alam memukau">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 11: Sound System & Props -->
-          <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-volume-high"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Sound System &amp; Game Props</h5>
-                    <p class="fas-dir-desc">Audio outdoor 5.000W &amp; puluhan properti permainan lengkap untuk mendukung jalannya acara.</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Sound System &amp; Game Props"
-                  data-cat="🎯 Outbound &amp; Wahana"
-                  data-img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Peralatan suara audio lapangan outdoor profesional beserta puluhan perlengkapan properti game seru untuk acara gathering."
-                  data-specs="Sound system outdoor berkekuatan 5000W;Microphone wireless jarak jauh;30+ jenis properti permainan outbound;Operator teknis audio standby">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/Green_field_for_corporate_gathering_202608051855.webp"
+                  data-desc="Area hijau rumput luas untuk fun games, ice breaking, dan kompetisi team building rombongan."
+                  data-specs="3 titik lapangan rumput luas;Kapasitas 1000+ peserta;Ground rata &amp; aman;Dekat dengan toilet &amp; sound system">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
@@ -424,84 +685,88 @@
 
       <!-- DIRECTORY CATEGORY 3: 🏨 Akomodasi & MICE -->
       <div class="fas-cat-section mb-5" data-category="akomodasi" data-reveal>
-        <div class="fas-cat-header">
-          <div class="fas-cat-icon"><i class="fa-solid fa-campground"></i></div>
-          <div>
-            <h3 class="fas-cat-title">🏨 Akomodasi &amp; MICE</h3>
-          </div>
+        <div class="d-flex align-items-center gap-2 mb-4 pb-2 border-bottom border-success border-opacity-25">
+          <div class="p-2 rounded-3 bg-success text-white"><i class="fa-solid fa-hotel fs-5"></i></div>
+          <h3 class="fw-bold text-dark m-0" style="font-size:1.35rem;">🏨 Akomodasi &amp; MICE</h3>
         </div>
 
-        <div class="row g-3 g-md-4">
-          <!-- Item 12: Penginapan, Hotel & Cottage -->
+        <div class="row g-4">
+          <!-- Card 10: Penginapan & Cottage -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-hotel"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Penginapan, Hotel &amp; Cottage</h5>
-                    <p class="fas-dir-desc">Kamar Standard, Deluxe, &amp; Cottage bernuansa kayu klasik dengan balkon view kebun teh.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Penginapan & Cottage">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-hotel"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Penginapan, Hotel &amp; Cottage</h5>
+                <p class="fas-card-desc fas-dir-desc">Kamar Standard, Deluxe, &amp; Cottage bernuansa kayu klasik dengan balkon view kebun teh.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Tipe Standard, Deluxe &amp; Cottage Kayu</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Balkon pribadi view lanskap teh</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Water heater, Wi-Fi &amp; sarapan pagi</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
                   data-title="Penginapan, Hotel &amp; Cottage"
                   data-cat="🏨 Akomodasi &amp; MICE"
                   data-img="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
                   data-desc="Pilihan akomodasi kamar Standard, Deluxe, hingga Cottage kayu bernuansa pegunungan sejuk dengan balkon menghadap hamparan kebun teh."
-                  data-specs="Pilihan tipe Standard, Deluxe, &amp; Cottage;Balkon pribadi view kebun teh;Kamar mandi air hangat &amp; Wi-Fi gratis;Termasuk sarapan pagi prasmanan">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-specs="Pilihan Standard, Deluxe, &amp; Cottage;Balkon pribadi view kebun teh;Kamar mandi air hangat &amp; Wi-Fi;Termasuk sarapan pagi prasmanan">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 13: Restoran & Tea House -->
+          <!-- Card 11: Restoran & Tea House -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-utensils"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Restoran &amp; Tea House</h5>
-                    <p class="fas-dir-desc">Restoran prasmanan 300+ seat dengan hidangan masakan Jawa &amp; varian teh Wonosari.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/Educational_tour_tea_factory_Malang_202608051854.webp" alt="Restoran & Tea House">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-utensils"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Restoran &amp; Tea House</h5>
+                <p class="fas-card-desc fas-dir-desc">Restoran prasmanan 300+ seat dengan hidangan masakan Jawa &amp; varian teh original Wonosari.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Kapasitas 300+ seat prasmanan rombongan</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Menu tradisional &amp; Nusantara halal</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Seduhan Teh Original Wonosari hangat</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
                   data-title="Restoran &amp; Tea House"
                   data-cat="🏨 Akomodasi &amp; MICE"
-                  data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Tempat kuliner khas pedesaan Jawa Timur dengan menu prasmanan halal lengkap dan varian teh seduh hangat asli perkebunan Wonosari."
-                  data-specs="Kapasitas 300+ seat prasmanan rombongan;Menu tradisional &amp; nusantara halal;Sajian teh hangat original Wonosari;Paket gala dinner &amp; coffee break">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/Educational_tour_tea_factory_Malang_202608051854.webp"
+                  data-desc="Tempat kuliner khas pedesaan Jawa Timur dengan menu prasmanan lengkap dan varian teh seduh hangat asli perkebunan Wonosari."
+                  data-specs="Kapasitas 300+ seat prasmanan;Menu tradisional &amp; Nusantara halal;Teh hangat original Wonosari;Paket gala dinner &amp; coffee break">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 14: Gedung Serbaguna / Hall -->
+          <!-- Card 12: Aula & Hall Meeting -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-people-roof"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Gedung Serbaguna / Hall</h5>
-                    <p class="fas-dir-desc">Aula AC kapasitas 50–300 peserta untuk rapat kerja, seminar, gathering &amp; gala dinner.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=800&q=80" alt="Aula & Gedung Serbaguna">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-building"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Gedung Serbaguna / Hall"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Gedung Serbaguna / Hall MICE</h5>
+                <p class="fas-card-desc fas-dir-desc">Aula AC kapasitas 50–300 peserta untuk rapat kerja, seminar, gathering &amp; gala dinner.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Kapasitas 50-300 peserta fleksibel</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Fasilitas AC, LCD Projector &amp; Audio</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Layanan catering &amp; coffee break</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Gedung Serbaguna / Hall MICE"
                   data-cat="🏨 Akomodasi &amp; MICE"
                   data-img="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Aula indoor ber-AC lengkap dengan sistem proyektor dan audio untuk rapat, gathering internal, seminar perusahaan, maupun gala dinner malam hari."
-                  data-specs="Kapasitas 50-300 peserta fleksibel;Fasilitas AC, LCD Projector &amp; Sound Indoor;Layout kursi Theater, U-Shape / Banquet;Catering &amp; Coffee Break service">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-desc="Aula indoor ber-AC lengkap dengan proyektor dan audio untuk rapat, gathering internal, seminar perusahaan, maupun gala dinner."
+                  data-specs="Kapasitas 50-300 peserta;Fasilitas AC, LCD Projector &amp; Sound Indoor;Layout kursi Theater / U-Shape / Banquet;Catering &amp; Coffee Break">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
@@ -511,134 +776,88 @@
 
       <!-- DIRECTORY CATEGORY 4: 🛠️ Fasilitas Umum -->
       <div class="fas-cat-section mb-4" data-category="umum" data-reveal>
-        <div class="fas-cat-header">
-          <div class="fas-cat-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <div>
-            <h3 class="fas-cat-title">🛠️ Fasilitas Umum</h3>
-          </div>
+        <div class="d-flex align-items-center gap-2 mb-4 pb-2 border-bottom border-success border-opacity-25">
+          <div class="p-2 rounded-3 bg-success text-white"><i class="fa-solid fa-shield-halved fs-5"></i></div>
+          <h3 class="fw-bold text-dark m-0" style="font-size:1.35rem;">🛠️ Fasilitas Umum</h3>
         </div>
 
-        <div class="row g-3 g-md-4">
-          <!-- Item 15: Area Parkir Luas -->
+        <div class="row g-4">
+          <!-- Card 13: Area Parkir Luas -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-bus"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Area Parkir Luas</h5>
-                    <p class="fas-dir-desc">Lahan parkir beraspal muat 30+ bus pariwisata &amp; ratusan kendaraan dengan CCTV 24 jam.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/Educational_tour_tea_factory_Malang_202608051854.webp" alt="Area Parkir Luas">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-bus"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Area Parkir Luas"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Area Parkir Bus &amp; Mobil Luas</h5>
+                <p class="fas-card-desc fas-dir-desc">Lahan parkir beraspal muat 30+ bus pariwisata &amp; ratusan kendaraan dengan pengawasan 24 jam.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Kapasitas 30+ bus pariwisata &amp; 300+ mobil</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Pos penjagaan &amp; CCTV 24 jam</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Akses jalan lebar beraspal mulus</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Area Parkir Bus &amp; Mobil Luas"
                   data-cat="🛠️ Fasilitas Umum"
-                  data-img="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Area parkir beraspal luas yang mampu menampung puluhan bus pariwisata medium/big bus serta ratusan mobil dan motor rombongan."
-                  data-specs="Kapasitas 30+ bus pariwisata &amp; 300+ mobil;Pos penjagaan petugas &amp; CCTV 24 jam;Akses jalan lebar mudah untuk bus besar;Penerangan area parkir malam hari">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/Educational_tour_tea_factory_Malang_202608051854.webp"
+                  data-desc="Area parkir beraspal luas yang mampu menampung puluhan bus pariwisata medium/big bus serta ratusan mobil rombongan."
+                  data-specs="Kapasitas 30+ bus pariwisata &amp; 300+ mobil;Pos penjagaan &amp; CCTV 24 jam;Akses jalan lebar &amp; mulus;Penerangan area parkir malam">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 16: Musholla Clean & Sejuk -->
+          <!-- Card 14: Keamanan & P3K Lapangan -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-mosque"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Musholla Clean &amp; Sejuk</h5>
-                    <p class="fas-dir-desc">Sarana ibadah bersih dengan tempat wudhu terpisah pria-wanita &amp; sarung/mukena tersedia.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="assets/img/People_participating_in_team-bui…_202608171421.webp" alt="Keamanan & P3K">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-kit-medical"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Musholla Clean &amp; Sejuk"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Keamanan &amp; Medis P3K 24 Jam</h5>
+                <p class="fas-card-desc fas-dir-desc">Tim keamanan patroli 24/7 beserta tim first aid P3K terlatih untuk penanganan medis darurat.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Patroli keamanan area 24 jam non-stop</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Tim medis First Aid P3K terlatih siaga</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Akses evakuasi darurat medis cepat</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+                  data-title="Keamanan &amp; Medis P3K 24 Jam"
                   data-cat="🛠️ Fasilitas Umum"
-                  data-img="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Musholla bersih &amp; nyaman yang tersebar di beberapa titik lokasi utama untuk kemudahan ibadah sholat berjamaah seluruh pengunjung."
-                  data-specs="Tempat wudhu terpisah pria &amp; wanita;Sajadah, sarung &amp; mukena bersih tersedia;Karpet bersih &amp; ruangan sejuk terawat;Tersebar di area restoran &amp; penginapan">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-img="assets/img/People_participating_in_team-bui…_202608171421.webp"
+                  data-desc="Tim keselamatan lapangan terlatih pertolongan pertama (First Aid) siap siaga memberikan pertolongan medis ringan selama kegiatan."
+                  data-specs="Petugas first aid terlatih;Kotak P3K standar lengkap;Patroli pos keamanan 24 jam;Respon cepat evakuasi darurat">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Item 17: Toilet & Kamar Bilas -->
+          <!-- Card 15: Pusat Oleh-Oleh -->
           <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-restroom"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Toilet &amp; Kamar Bilas</h5>
-                    <p class="fas-dir-desc">Fasilitas sanitasi bersih terawat tersebar di 5+ titik strategis lokasi.</p>
-                  </div>
-                </div>
+            <div class="fas-grid-card">
+              <div class="fas-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1528821128474-27f963b072b7?auto=format&fit=crop&w=800&q=80" alt="Pusat Oleh-Oleh">
+                <div class="fas-circle-icon-badge"><i class="fa-solid fa-bag-shopping"></i></div>
               </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Toilet &amp; Kamar Bilas"
-                  data-cat="🛠️ Fasilitas Umum"
-                  data-img="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Toilet dan kamar bilas bersih yang selalu dijaga oleh tim janitor kami untuk kenyamanan peserta setelah beraktivitas basah atau fisik."
-                  data-specs="Fasilitas terawat tersebar di 5+ titik lokasi;Pembersihan &amp; kontrol rutin oleh petugas;Air bersih alami melimpah;Kamar ganti &amp; bilas terpisah">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 18: Pusat Oleh-Oleh -->
-          <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-bag-shopping"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Pusat Oleh-Oleh</h5>
-                    <p class="fas-dir-desc">Toko souvenir menjual Teh Original Wonosari, oleh-oleh khas Malang &amp; kerajinan lokal.</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
+              <div class="fas-card-body">
+                <h5 class="fas-card-title fas-dir-title">Pusat Oleh-Oleh &amp; Souvenir</h5>
+                <p class="fas-card-desc fas-dir-desc">Toko souvenir menyediakan Teh Original Wonosari, oleh-oleh khas Malang &amp; kerajinan lokal.</p>
+                <ul class="fas-feature-list">
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Teh Hitam, Hijau &amp; Celup Wonosari</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Camilan &amp; keripik buah khas Malang</span></li>
+                  <li><i class="fa-solid fa-circle-check"></i> <span>Kaos souvenir &amp; cenderamata unik</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-custom w-100 mt-auto fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
                   data-title="Pusat Oleh-Oleh &amp; Souvenir"
                   data-cat="🛠️ Fasilitas Umum"
                   data-img="https://images.unsplash.com/photo-1528821128474-27f963b072b7?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Pusat perbelanjaan souvenir yang menyediakan varian teh original Wonosari kemasan 100gr-1kg, camilan khas Malang, dan kerajinan lokal."
-                  data-specs="Teh original Wonosari (Teh Hitam, Hijau, Celup);Camilan &amp; keripik khas Malang;Pakaian souvenir &amp; kerajinan tangan;Kemasan hadiah &amp; paket hemat">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 19: Tim Medis & P3K -->
-          <div class="col-lg-4 col-md-6 fas-dir-col">
-            <div class="fas-dir-card">
-              <div>
-                <div class="fas-dir-card-header">
-                  <div class="fas-dir-icon-box"><i class="fa-solid fa-kit-medical"></i></div>
-                  <div>
-                    <h5 class="fas-dir-title">Tim Medis &amp; P3K</h5>
-                    <p class="fas-dir-desc">Petugas first aid terlatih siaga beserta perlengkapan P3K lengkap untuk penanganan darurat.</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button type="button" class="fas-dir-link" data-bs-toggle="modal" data-bs-target="#facilityDetailModal"
-                  data-title="Tim Medis &amp; P3K Lapangan"
-                  data-cat="🛠️ Fasilitas Umum"
-                  data-img="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
-                  data-desc="Tim keselamatan lapangan terlatih pertolongan pertama (First Aid) siap siaga memberikan pertolongan medis ringan selama kegiatan."
-                  data-specs="Petugas first aid terlatih di lapangan;Kotak perlengkapan P3K standar lengkap;Kerjasama dengan fasilitas kesehatan terdekat;Respon cepat evakuasi darurat">
-                  Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                  data-desc="Pusat perbelanjaan souvenir yang menyediakan varian teh original Wonosari kemasan, camilan khas Malang, dan kerajinan lokal."
+                  data-specs="Teh original Wonosari (Hitam, Hijau, Celup);Camilan &amp; keripik khas Malang;Pakaian souvenir &amp; kerajinan;Paket oleh-oleh hemat">
+                  Lihat Detail <i class="fa-solid fa-arrow-right ms-1"></i>
                 </button>
               </div>
             </div>
@@ -646,12 +865,12 @@
         </div>
       </div>
 
-      <!-- No Search Results Container -->
+      <!-- No Search Results Message -->
       <div id="fasNoResults" class="text-center py-5 d-none">
         <div class="p-4 rounded-4 bg-white d-inline-block shadow-sm" style="max-width:400px;">
           <i class="fa-solid fa-magnifying-glass-minus text-warning display-4 mb-3"></i>
           <h5 class="fw-bold mb-2">Fasilitas Tidak Ditemukan</h5>
-          <p class="text-muted small mb-0">Coba gunakan kata kunci pencarian lain atau pilih kategori fasilitas yang tersedia.</p>
+          <p class="text-muted small mb-0">Coba gunakan kata kunci pencarian lain atau pilih filter kategori yang tersedia.</p>
         </div>
       </div>
 
@@ -659,92 +878,203 @@
   </section>
 
   <!-- ===================================================
-       VISUAL HIGHLIGHTS GALLERY (Focused 4 Featured Photos)
+       SECTION 2: Add-on Services ("Layanan Lengkap Tanpa Ribet")
        =================================================== -->
   <section class="py-5 section-white border-top border-bottom">
     <div class="container">
-      <div class="text-center mb-4" data-reveal>
-        <span class="section-label"><i class="fa-solid fa-camera me-1"></i> Gallery Atmosphere</span>
-        <h2 class="fw-bold" style="font-size:1.65rem;">Visual Highlights Suasana Wonosari</h2>
-        <p class="text-secondary mx-auto" style="max-width:600px;font-size:0.9rem;">
-          Gambaran suasana kebun teh sejuk, sarana outdoor, serta akomodasi kenyamanan bagi pengunjung Agro Wonosari.
+      <div class="row align-items-center g-4 g-lg-5">
+        
+        <!-- Left Column: Title & Description -->
+        <div class="col-lg-5" data-reveal>
+          <span class="badge badge-amber mb-3"><i class="fa-solid fa-cubes me-1"></i> ALL-IN-ONE SERVICE</span>
+          <h2 class="fw-bold display-6 mb-3">Layanan <span class="text-success">Lengkap</span> Tanpa Ribet</h2>
+          <p class="text-secondary mb-4" style="line-height:1.75;font-size:0.95rem;">
+            Kami menyediakan seluruh dukungan sarana operasional dan peralatan pendukung agar kegiatan outbound, edutainment, maupun acara gathering rombongan Anda di Kebun Teh Wonosari berjalan lancar tanpa kendala teknis.
+          </p>
+
+          <div class="p-4 rounded-4 border border-success border-opacity-25 bg-light mb-4 shadow-sm">
+            <div class="d-flex align-items-start gap-3">
+              <div class="p-3 rounded-circle bg-success text-white flex-shrink-0">
+                <i class="fa-solid fa-headset fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold text-dark mb-1">Siap Membantu Penyesuaian Event</h6>
+                <p class="text-muted small mb-3" style="line-height:1.6;">
+                  Tim operasional kami berpengalaman menangani gathering skala 20 hingga 1.000+ peserta.
+                </p>
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20tanya%20layanan%20pendukung%20outbound" target="_blank" class="btn btn-sm btn-amber text-dark fw-bold rounded-pill px-3 py-2">
+                  <i class="fa-brands fa-whatsapp me-1"></i> Hubungi Customer Service
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: 4 Service Cards List -->
+        <div class="col-lg-7" data-reveal>
+          <div class="d-flex flex-column gap-3">
+            
+            <!-- Service Item 1 -->
+            <div class="service-item-card">
+              <div class="service-icon-box"><i class="fa-solid fa-campground"></i></div>
+              <div class="service-item-body">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-1">
+                  <h5 class="service-item-title m-0">Tenda &amp; Peralatan Outbound</h5>
+                  <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill fw-semibold" style="font-size:0.75rem;">Tersedia Lengkap</span>
+                </div>
+                <p class="service-item-desc">Persewaan tenda dome waterproof, matras, sleeping bag, hingga properti game outbound lengkap.</p>
+              </div>
+            </div>
+
+            <!-- Service Item 2 -->
+            <div class="service-item-card">
+              <div class="service-icon-box"><i class="fa-solid fa-utensils"></i></div>
+              <div class="service-item-body">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-1">
+                  <h5 class="service-item-title m-0">Catering &amp; Menu Konsumsi</h5>
+                  <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill fw-semibold" style="font-size:0.75rem;">Pilihan Halal</span>
+                </div>
+                <p class="service-item-desc">Layanan nasi kotak, prasmanan tradisional, coffee break teh hangat, hingga kambing guling.</p>
+              </div>
+            </div>
+
+            <!-- Service Item 3 -->
+            <div class="service-item-card">
+              <div class="service-icon-box"><i class="fa-solid fa-volume-high"></i></div>
+              <div class="service-item-body">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-1">
+                  <h5 class="service-item-title m-0">Peralatan Sound &amp; Dokumentasi</h5>
+                  <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill fw-semibold" style="font-size:0.75rem;">Paket Pro</span>
+                </div>
+                <p class="service-item-desc">Sound system outdoor 5.000W, mic wireless jarak jauh, serta tim dokumentasi foto &amp; video drone.</p>
+              </div>
+            </div>
+
+            <!-- Service Item 4 -->
+            <div class="service-item-card">
+              <div class="service-icon-box"><i class="fa-solid fa-bolt"></i></div>
+              <div class="service-item-body">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-1">
+                  <h5 class="service-item-title m-0">Lampu Penerangan &amp; Listrik Lapangan</h5>
+                  <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill fw-semibold" style="font-size:0.75rem;">Standar Keamanan</span>
+                </div>
+                <p class="service-item-desc">Sistem penerangan lapangan malam hari, lampu sorot event, serta genset cadangan berkapasitas besar.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECTION 3: Area Rules & Etiquette ("Peraturan Area Outbound & Wisata")
+       =================================================== -->
+  <section class="py-5 section-soft">
+    <div class="container">
+
+      <!-- Section Title Header -->
+      <div class="text-center mb-5" data-reveal>
+        <span class="section-label mb-2"><i class="fa-solid fa-shield-halved me-1"></i> ATURAN &amp; ETIKA</span>
+        <h2 class="fw-bold display-6 mb-3">Peraturan <span class="text-success">Area Outbound &amp; Wisata</span></h2>
+        <p class="text-secondary mx-auto mb-0" style="max-width:640px;font-size:0.95rem;line-height:1.7;">
+          Demi kenyamanan, keselamatan bersama, dan kelestarian alam kebun teh Wonosari, mohon seluruh pengunjung mematuhi tata tertib berikut.
         </p>
       </div>
 
-      <div class="row g-3 g-md-4">
-        <!-- Photo 1: Featured Main (Large) -->
-        <div class="col-lg-6" data-reveal>
-          <div class="gallery-highlight-card" style="height:380px;">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80" alt="Kebun Teh Wonosari">
-            <div class="gallery-highlight-caption">
-              <h6>🌿 Kebun Teh Wonosari 1.140 Hektar</h6>
-              <p>Hamparan kebun teh hijau sejuk di kaki Gunung Arjuno 1.100 MDPL.</p>
-            </div>
+      <!-- 6 Numbered Rule Cards Grid -->
+      <div class="row g-4" data-reveal>
+
+        <!-- Rule 01 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="rule-number-card">
+            <div class="rule-number-badge">01</div>
+            <h5 class="rule-title">Jaga Kebersihan Area</h5>
+            <p class="rule-desc">Dilarang membuang sampah sembarangan di kebun teh. Buanglah sampah pada tempat sampah organik/anorganik yang tersedia.</p>
           </div>
         </div>
 
-        <!-- Photo 2 & 3: Grid Small Right -->
-        <div class="col-lg-6">
-          <div class="row g-3 g-md-4">
-            <div class="col-6" data-reveal>
-              <div class="gallery-highlight-card" style="height:182px;">
-                <img src="https://images.unsplash.com/photo-1533591380388-58be847a9687?auto=format&fit=crop&w=600&q=80" alt="Outbound Adventure">
-                <div class="gallery-highlight-caption">
-                  <h6>🎯 Outbound &amp; Flying Fox</h6>
-                  <p>Wahana petualangan seru berstandar keselamatan.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-6" data-reveal>
-              <div class="gallery-highlight-card" style="height:182px;">
-                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Akomodasi Cottage">
-                <div class="gallery-highlight-caption">
-                  <h6>🏨 Penginapan &amp; Cottage</h6>
-                  <p>Akomodasi kayu klasik view lanskap alam.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12" data-reveal>
-              <div class="gallery-highlight-card" style="height:182px;">
-                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Kolam Renang Air Hangat">
-                <div class="gallery-highlight-caption">
-                  <h6>💧 Kolam Renang Air Hangat Alami</h6>
-                  <p>Relaksasi tubuh di tengah udara sejuk pegunungan.</p>
-                </div>
-              </div>
-            </div>
+        <!-- Rule 02 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="rule-number-card">
+            <div class="rule-number-badge">02</div>
+            <h5 class="rule-title">Jam Operasional &amp; Quiet Hours</h5>
+            <p class="rule-desc">Pembatasan suara musik outdoor &amp; pengeras suara hingga jam 22.00 WIB demi kenyamanan seluruh peserta menginap.</p>
           </div>
         </div>
+
+        <!-- Rule 03 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="rule-number-card">
+            <div class="rule-number-badge">03</div>
+            <h5 class="rule-title">Dilarang Merusak Tanaman Teh</h5>
+            <p class="rule-desc">Pohon teh merupakan aset perkebunan aktif PTPN. Harap tidak merusak atau memetik daun teh sembarangan tanpa pemandu.</p>
+          </div>
+        </div>
+
+        <!-- Rule 04 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="rule-number-card">
+            <div class="rule-number-badge">04</div>
+            <h5 class="rule-title">Dilarang Merokok Sembarangan</h5>
+            <p class="rule-desc">Merokok hanya diizinkan di titik area merokok (designated smoking area) demi mencegah potensi bahaya kebakaran.</p>
+          </div>
+        </div>
+
+        <!-- Rule 05 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="rule-number-card">
+            <div class="rule-number-badge">05</div>
+            <h5 class="rule-title">Keselamatan Utama di Wahana</h5>
+            <p class="rule-desc">Wajib mengencangkan helm &amp; harness serta mematuhi seluruh petunjuk fasilitator di setiap wahana outbound.</p>
+          </div>
+        </div>
+
+        <!-- Rule 06 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="rule-number-card">
+            <div class="rule-number-badge">06</div>
+            <h5 class="rule-title">Registrasi &amp; Check-in Rombongan</h5>
+            <p class="rule-desc">Penanggung jawab rombongan wajib melaporkan jumlah peserta &amp; jadwal di Pos Admin Kedatangan Wisata.</p>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- Consultative CTA Banner -->
-  <section class="py-5 section-softer">
+  <!-- ===================================================
+       SECTION 4: Call to Action Banner ("Siap Merencanakan Outbound Anda?")
+       =================================================== -->
+  <section class="py-5 section-white">
     <div class="container" data-reveal>
-      <div class="p-4 p-md-5 rounded-4 text-white text-center cta-premium" style="position:relative;overflow:hidden;border-radius:24px;">
-        <div style="position:relative;z-index:2">
-          <span class="badge mb-3" style="background:rgba(255,193,7,0.2);color:#FFD54F;border:1px solid rgba(255,193,7,0.3);padding:7px 18px;border-radius:50px;font-size:0.82rem;">
-            <i class="fa-solid fa-comments me-1"></i> Layanan Konsultasi Acara
-          </span>
-          <h3 class="fw-bold mb-3">Butuh Informasi Fasilitas untuk Acara Anda?</h3>
-          <p class="text-white mx-auto mb-4" style="font-size:0.98rem;max-width:620px;opacity:0.88;line-height:1.7;">
-            Tim kami siap membantu menyesuaikan penggunaan hall meeting, akomodasi penginapan, resto, serta wahana outbound sesuai dengan skala kebutuhan rombongan Anda.
-          </p>
-          <div class="d-flex flex-wrap justify-content-center gap-3">
-            <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20konsultasi%20kebutuhan%20fasilitas%20acara" target="_blank" class="btn btn-amber text-dark px-4 py-3 rounded-pill fw-bold">
-              <i class="fa-brands fa-whatsapp me-2"></i> Konsultasikan Sekarang
-            </a>
-            <a href="paket.html" class="btn btn-outline-light px-4 py-3 rounded-pill fw-bold" style="border-width:2px;">
-              <i class="fa-solid fa-boxes-packing me-2"></i> Lihat Pilihan Paket
-            </a>
-          </div>
+      <div class="cta-banner-v2">
+        <div class="cta-banner-icon">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <span class="badge mb-3" style="background:rgba(255,193,7,0.2);color:#FFD54F;border:1px solid rgba(255,193,7,0.3);padding:7px 18px;border-radius:50px;font-size:0.82rem;">
+          <i class="fa-solid fa-comments me-1"></i> KONSULTASI ACARA GRATIS
+        </span>
+        <h2 class="display-6 fw-bold mb-3">Siap Merencanakan Outbound &amp; Wisata Anda?</h2>
+        <p class="text-white mx-auto mb-4" style="font-size:0.98rem;max-width:640px;opacity:0.9;line-height:1.7;">
+          Konsultasikan kebutuhan fasilitas, lokasi lapangan, akomodasi penginapan, serta jadwal acara rombongan Anda langsung dengan customer service kami.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Wisata%20Agro%20Wonosari,%20saya%20ingin%20konsultasi%20kebutuhan%20fasilitas%20acara" target="_blank" class="btn btn-amber text-dark px-4 py-3 rounded-pill fw-bold">
+            <i class="fa-brands fa-whatsapp me-2"></i> Chat Via WhatsApp
+          </a>
+          <a href="paket.html" class="btn btn-outline-light px-4 py-3 rounded-pill fw-bold" style="border-width:2px;">
+            <i class="fa-solid fa-boxes-packing me-2"></i> Lihat Pilihan Paket Outbound
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Facility Detail Modal (Consultative Quick View) -->
+  <!-- Facility Detail Modal -->
   <div class="modal fade" id="facilityDetailModal" tabindex="-1" aria-labelledby="modalFasTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content facility-modal-content">
@@ -777,7 +1107,7 @@
     </div>
   </div>
 
-  <!-- Floating Buttons -->
+  <!-- Floating Action Buttons -->
   <div class="floating-widget-group">
     <button type="button" id="backToTopBtn" class="floating-btn floating-btn-top" aria-label="Kembali ke atas">
       <i class="fa-solid fa-arrow-up"></i>
@@ -839,11 +1169,12 @@
         </div>
       </div>
       <div class="footer-bottom text-center">
-        <p class="m-0">&copy; 2026 Wisata Agro Wonosari Outbound. All rights reserved.</p>
+        <p class="m-0 text-white-50">&copy; 2026 Wisata Agro Wonosari Outbound. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
