@@ -10,46 +10,33 @@
    1. CSS VARIABLES – Design Tokens
    ────────────────────────────────────────────────────────── */
 :root {
-  /* Brand Colors - Maroon & Gold Executive Palette */
-  --primary-maroon: #6B1D2F;
-  --deep-maroon:    #4A121F;
-  --dark-maroon:    #581726;
-  --light-maroon:   #8D263E;
-  --soft-maroon-bg: #FDF7F8;
-
-  --accent-gold:    #D4AF37;
-  --dark-gold:      #B38F24;
-  --bright-gold:    #F4C430;
-  --light-gold:     #F7E9BE;
-  --gold-glow:      0 0 20px rgba(212, 175, 55, 0.45);
-
-  /* Legacy brand variable mappings for seamless skinning */
-  --primary-green:  #6B1D2F;
-  --dark-green:     #4A121F;
-  --deep-forest:    #6B1D2F;
-  --light-green:    #8D263E;
-  --soft-green-bg:  #FDF7F8;
+  /* Brand Colors */
+  --primary-green:  #4CAF50;
+  --dark-green:     #2E7D32;
+  --deep-forest:    #1B3B2B;
+  --light-green:    #81C784;
+  --soft-green-bg:  #E8F5E9;
 
   /* Background System */
   --bg-white:       #FFFFFF;
-  --bg-soft:        #FAFAFA;
-  --bg-softer:      #F7F5F6;
-  --off-white:      #FFFFFF;
+  --bg-soft:        #F8FCF7;
+  --bg-softer:      #F4FAF2;
+  --off-white:      #F9F9F9;
 
-  /* Accent aliases */
-  --accent-amber:   #D4AF37;
-  --dark-amber:     #B38F24;
+  /* Accent */
+  --accent-amber:   #FFC107;
+  --dark-amber:     #FFA000;
 
-  /* Text - Headings Maroon, Body Dark Charcoal derived from Maroon */
-  --text-dark:      #6B1D2F;
-  --text-body:      #2C1F23;
-  --text-muted:     #68555A;
+  /* Text */
+  --text-dark:      #1A2E1D;
+  --text-body:      #374340;
+  --text-muted:     #6C757D;
 
   /* Shadows */
-  --shadow-sm:      0 2px 12px rgba(107, 29, 47, 0.08);
-  --shadow-card:    0 8px 32px rgba(107, 29, 47, 0.10);
-  --shadow-hover:   0 16px 40px rgba(107, 29, 47, 0.20), 0 0 20px rgba(212, 175, 55, 0.35);
-  --shadow-glow:    0 0 24px rgba(212, 175, 55, 0.40);
+  --shadow-sm:      0 2px 12px rgba(46,125,50,0.06);
+  --shadow-card:    0 8px 32px rgba(46,125,50,0.09);
+  --shadow-hover:   0 20px 48px rgba(46,125,50,0.18);
+  --shadow-glow:    0 0 0 4px rgba(76,175,80,0.12);
 
   /* Borders */
   --radius-sm:      12px;
@@ -164,26 +151,26 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .navbar-custom {
-  background: #6B1D2F !important;
+  background: rgba(255,255,255,0.97) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 2px solid rgba(212, 175, 55, 0.4);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(76,175,80,0.12);
+  box-shadow: 0 2px 20px rgba(27,59,43,0.06);
   transition: transform 0.35s var(--ease), box-shadow 0.3s ease;
-  padding-top: 12px !important;
-  padding-bottom: 12px !important;
-  min-height: 68px;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  min-height: 64px;
   position: sticky;
   top: 0;
   z-index: 1040;
 }
 
-/* Brand: solid white and gold logo emblem */
+/* Brand: exact same on every page */
 nav.navbar-custom a.navbar-brand,
 nav.navbar-custom .navbar-brand {
   font-family: 'Outfit', sans-serif !important;
   font-weight: 800 !important;
-  color: #FFFFFF !important;
+  color: var(--deep-forest) !important;
   font-size: 1.2rem !important;
   display: flex !important;
   align-items: center !important;
@@ -195,15 +182,15 @@ nav.navbar-custom .navbar-brand {
   line-height: 1 !important;
 }
 
-/* Brand gold leaf/emblem icon */
+/* Brand leaf icon */
 nav.navbar-custom a.navbar-brand i,
 nav.navbar-custom .navbar-brand > i {
-  color: #D4AF37 !important;
-  font-size: 1.65rem !important;
+  color: var(--primary-green) !important;
+  font-size: 1.55rem !important;
   line-height: 1 !important;
-  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.5));
+  filter: drop-shadow(0 2px 6px rgba(76,175,80,0.35));
   flex-shrink: 0;
-  width: 1.65rem;
+  width: 1.55rem;
   text-align: center;
 }
 
@@ -214,76 +201,46 @@ nav.navbar-custom .navbar-brand .brand-title {
   flex-direction: column !important;
   line-height: 1.15 !important;
   font-weight: 800 !important;
-  font-size: 1.05rem !important;
-  letter-spacing: 0.3px;
-  color: #FFFFFF !important;
+  font-size: 1rem !important;
+  letter-spacing: -0.2px;
 }
 
 /* Brand subtitle */
 nav.navbar-custom a.navbar-brand .brand-sub,
 nav.navbar-custom .navbar-brand .brand-sub {
   display: block !important;
-  font-size: 0.64rem !important;
+  font-size: 0.62rem !important;
   font-weight: 600 !important;
-  letter-spacing: 0.8px !important;
-  color: #D4AF37 !important;
+  letter-spacing: 0.6px !important;
+  color: var(--text-muted) !important;
   text-transform: uppercase;
   line-height: 1.2 !important;
 }
 
-/* Nav links: crisp White text (#FFFFFF) */
+/* Nav links: exact same size and padding on every page */
 .navbar-custom .navbar-nav .nav-link {
-  color: #FFFFFF !important;
-  font-weight: 600 !important;
+  color: var(--deep-forest) !important;
+  font-weight: 500 !important;
   font-size: 0.9rem !important;
-  padding: 8px 16px !important;
+  padding: 7px 14px !important;
   border-radius: 8px !important;
   transition: var(--transition);
-  margin: 0 3px !important;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  margin: 0 2px !important;
+  letter-spacing: 0.1px;
   line-height: 1.4 !important;
 }
 
-.navbar-custom .navbar-nav .nav-link:hover {
-  color: #D4AF37 !important;
-  background: rgba(212, 175, 55, 0.12);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
-}
-
-/* Active page highlighted in Gold (#D4AF37) */
+.navbar-custom .navbar-nav .nav-link:hover,
 .navbar-custom .navbar-nav .nav-link.active {
-  color: #6B1D2F !important;
-  background: #D4AF37 !important;
-  font-weight: 700 !important;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+  box-shadow: 0 3px 12px rgba(76,175,80,0.3);
 }
 
-/* Call Us button: Gold (#D4AF37) button with White text */
-.btn-call-us,
-.navbar-custom .btn-amber {
-  background: linear-gradient(135deg, #D4AF37 0%, #B38F24 100%) !important;
-  color: #FFFFFF !important;
-  font-weight: 700 !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4) !important;
-  transition: var(--transition) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.btn-call-us:hover,
-.navbar-custom .btn-amber:hover {
-  background: linear-gradient(135deg, #F4C430 0%, #D4AF37 100%) !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.6) !important;
-  transform: translateY(-2px);
-}
-
-/* Hamburger toggler right-aligned */
+/* LOCKED: hamburger toggler right-aligned */
 .navbar-toggler {
-  border: 2px solid #D4AF37 !important;
-  color: #D4AF37 !important;
+  border: 2px solid rgba(76,175,80,0.5) !important;
+  color: var(--dark-green) !important;
   padding: 6px 12px !important;
   border-radius: 8px !important;
   margin-left: auto !important;
@@ -293,7 +250,7 @@ nav.navbar-custom .navbar-brand .brand-sub {
 }
 
 .navbar-toggler:hover {
-  background: rgba(212, 175, 55, 0.15);
+  background: var(--soft-green-bg);
 }
 
 .navbar-toggler:focus {
@@ -314,30 +271,30 @@ nav.navbar-custom .navbar-brand .brand-sub {
 .hero-section {
   position: relative;
   background: linear-gradient(
-      155deg,
-      rgba(74, 18, 31, 0.94) 0%,
-      rgba(107, 29, 47, 0.88) 50%,
-      rgba(42, 10, 18, 0.96) 100%
+      160deg,
+      rgba(12, 40, 22, 0.88) 0%,
+      rgba(27, 59, 43, 0.82) 40%,
+      rgba(46, 125, 50, 0.70) 100%
     ),
     url('../assets/img/Wonosari_tea_plantation_landscape_202608051845.webp')
       center 30% / cover no-repeat;
   color: #fff;
-  padding: 110px 0 95px;
+  padding: 110px 0 90px;
   overflow: hidden;
   min-height: 580px;
   display: flex;
   align-items: center;
 }
 
-/* Gold radial glow effect */
+/* Sunlight glow effect */
 .hero-section::before {
   content: '';
   position: absolute;
   top: -120px;
   right: -80px;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, transparent 65%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,193,7,0.10) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -347,19 +304,19 @@ nav.navbar-custom .navbar-brand .brand-sub {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cellipse cx='40' cy='40' rx='28' ry='12' fill='none' stroke='rgba(212,175,55,0.06)' stroke-width='1.5'/%3E%3Cellipse cx='40' cy='40' rx='28' ry='12' fill='none' stroke='rgba(212,175,55,0.04)' stroke-width='1' transform='rotate(45 40 40)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cellipse cx='40' cy='40' rx='28' ry='12' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1.5'/%3E%3Cellipse cx='40' cy='40' rx='28' ry='12' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1' transform='rotate(45 40 40)'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }
 
-/* Soft bottom fade into next white section */
+/* Soft bottom fade into next section */
 .hero-fade-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 40px;
-  background: linear-gradient(to bottom, transparent, #FFFFFF);
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.7));
   pointer-events: none;
   z-index: 2;
 }
@@ -369,20 +326,19 @@ nav.navbar-custom .navbar-brand .brand-sub {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(212, 175, 55, 0.18);
+  background: rgba(255,255,255,0.12);
   backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(212, 175, 55, 0.6);
-  color: #F4C430;
-  padding: 8px 20px;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: #fff;
+  padding: 7px 18px;
   border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.hero-glass-badge i { color: #D4AF37; }
+.hero-glass-badge i { color: var(--accent-amber); }
 
 /* Hero stat cards (glassmorphism) */
 .hero-stat-card {
@@ -586,15 +542,12 @@ nav.navbar-custom .navbar-brand .brand-sub {
 /* ──────────────────────────────────────────────────────────
    7. BUTTONS
    ────────────────────────────────────────────────────────── */
-/* ──────────────────────────────────────────────────────────
-   7. BUTTONS
-   ────────────────────────────────────────────────────────── */
 .btn-primary-custom {
-  background: linear-gradient(135deg, #6B1D2F 0%, #4A121F 100%);
-  border: 1px solid #D4AF37;
-  color: #FFFFFF !important;
-  font-weight: 700;
-  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 11px 26px;
   border-radius: 50px;
   transition: var(--transition);
   display: inline-flex;
@@ -602,29 +555,28 @@ nav.navbar-custom .navbar-brand .brand-sub {
   justify-content: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgba(107, 29, 47, 0.35);
-  letter-spacing: 0.3px;
+  box-shadow: 0 5px 18px rgba(76,175,80,0.32);
+  letter-spacing: 0.1px;
 }
 
 .btn-primary-custom:hover {
-  background: linear-gradient(135deg, #8D263E 0%, #6B1D2F 100%);
-  color: #FFFFFF !important;
+  background: linear-gradient(135deg, var(--dark-green) 0%, var(--deep-forest) 100%);
+  color: #fff !important;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(107, 29, 47, 0.45), 0 0 18px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 28px rgba(46,125,50,0.42);
 }
 
 .btn-primary-custom:active {
   transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(46,125,50,0.30);
 }
 
-/* Glowing Gold CTA button with bold Maroon text */
-.btn-amber,
-.btn-gold-glowing {
-  background: linear-gradient(135deg, #D4AF37 0%, #B38F24 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  color: #6B1D2F !important;
-  font-weight: 800 !important;
-  padding: 13px 30px;
+.btn-amber {
+  background: linear-gradient(135deg, var(--accent-amber) 0%, #FFB300 100%);
+  border: none;
+  color: var(--deep-forest) !important;
+  font-weight: 700;
+  padding: 11px 26px;
   border-radius: 50px;
   transition: var(--transition);
   display: inline-flex;
@@ -632,26 +584,24 @@ nav.navbar-custom .navbar-brand .brand-sub {
   justify-content: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45), 0 0 15px rgba(212, 175, 55, 0.3);
-  letter-spacing: 0.4px;
+  box-shadow: 0 5px 18px rgba(255,193,7,0.35);
 }
 
-.btn-amber:hover,
-.btn-gold-glowing:hover {
-  background: linear-gradient(135deg, #F4C430 0%, #D4AF37 100%) !important;
-  color: #4A121F !important;
+.btn-amber:hover {
+  background: linear-gradient(135deg, #FFB300 0%, var(--dark-amber) 100%);
+  color: var(--deep-forest) !important;
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.65), 0 0 25px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 10px 28px rgba(255,160,0,0.45);
 }
 
 .btn-amber:active { transform: translateY(-1px); }
 
 .btn-outline-custom {
-  border: 2px solid #6B1D2F;
-  color: #6B1D2F !important;
+  border: 2px solid var(--primary-green);
+  color: var(--dark-green) !important;
   background: transparent;
-  font-weight: 700;
-  padding: 10px 24px;
+  font-weight: 600;
+  padding: 9px 22px;
   border-radius: 50px;
   transition: var(--transition);
   display: inline-flex;
@@ -662,25 +612,25 @@ nav.navbar-custom .navbar-brand .brand-sub {
 }
 
 .btn-outline-custom:hover {
-  background: linear-gradient(135deg, #6B1D2F, #4A121F);
-  color: #D4AF37 !important;
-  border-color: #D4AF37;
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+  color: #fff !important;
+  border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(107, 29, 47, 0.3);
+  box-shadow: 0 6px 18px rgba(76,175,80,0.28);
 }
 
 /* ──────────────────────────────────────────────────────────
    8. BADGES
    ────────────────────────────────────────────────────────── */
 .badge-amber {
-  background: rgba(212, 175, 55, 0.15);
-  color: #6B1D2F;
-  border: 1px solid #D4AF37;
-  font-weight: 700;
-  padding: 7px 18px;
+  background: rgba(255,193,7,0.12);
+  color: #996800;
+  border: 1px solid rgba(255,193,7,0.5);
+  font-weight: 600;
+  padding: 6px 16px;
   border-radius: 50px;
-  font-size: 0.85rem;
-  letter-spacing: 0.4px;
+  font-size: 0.82rem;
+  letter-spacing: 0.2px;
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -693,7 +643,7 @@ nav.navbar-custom .navbar-brand .brand-sub {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 10 C40 10 20 30 20 50 C20 70 40 85 60 80 C80 85 100 70 100 50 C100 30 80 10 60 10Z' fill='none' stroke='rgba(107,29,47,0.035)' stroke-width='2'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 10 C40 10 20 30 20 50 C20 70 40 85 60 80 C80 85 100 70 100 50 C100 30 80 10 60 10Z' fill='none' stroke='rgba(76,175,80,0.035)' stroke-width='2'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }
@@ -707,19 +657,19 @@ nav.navbar-custom .navbar-brand .brand-sub {
   pointer-events: none;
   z-index: 0;
 }
-.blur-orb-green { background: rgba(107, 29, 47, 0.06); }
-.blur-orb-amber { background: rgba(212, 175, 55, 0.08); }
+.blur-orb-green { background: rgba(76,175,80,0.08); }
+.blur-orb-amber { background: rgba(255,193,7,0.06); }
 
 /* ──────────────────────────────────────────────────────────
-   10. CARDS – White Background & Thin Maroon Accent Border
+   10. CARDS – Premium Upgrade
    ────────────────────────────────────────────────────────── */
 
 /* Generic custom card */
 .custom-card {
-  background: #FFFFFF;
+  background: #fff;
   border-radius: var(--radius-lg);
-  border: 1.5px solid rgba(107, 29, 47, 0.28);
-  box-shadow: 0 8px 30px rgba(107, 29, 47, 0.08);
+  border: 1px solid rgba(76,175,80,0.12);
+  box-shadow: var(--shadow-card);
   transition: var(--transition-slow);
   height: 100%;
   overflow: hidden;
@@ -729,17 +679,17 @@ nav.navbar-custom .navbar-brand .brand-sub {
 
 .custom-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 45px rgba(107, 29, 47, 0.16), 0 0 20px rgba(212, 175, 55, 0.35);
-  border-color: #6B1D2F;
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(76,175,80,0.28);
 }
 
-/* Reason Cards – Feature Cards */
+/* Reason Cards – 6 Alasan */
 .reason-card {
-  background: #FFFFFF;
+  background: #fff;
   border-radius: var(--radius-lg);
   padding: 32px 24px;
-  border: 1.5px solid rgba(107, 29, 47, 0.28);
-  box-shadow: 0 8px 30px rgba(107, 29, 47, 0.08);
+  border: 1px solid rgba(76,175,80,0.12);
+  box-shadow: var(--shadow-card);
   transition: var(--transition-slow);
   height: 100%;
   display: flex;
@@ -754,8 +704,8 @@ nav.navbar-custom .navbar-brand .brand-sub {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 3.5px;
-  background: linear-gradient(90deg, #6B1D2F, #D4AF37, #6B1D2F);
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-amber));
   transform: scaleX(0);
   transition: transform 0.35s ease;
   transform-origin: left;
@@ -763,35 +713,33 @@ nav.navbar-custom .navbar-brand .brand-sub {
 
 .reason-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 45px rgba(107, 29, 47, 0.16), 0 0 22px rgba(212, 175, 55, 0.4);
-  border-color: #6B1D2F;
-  background: #FFFFFF;
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(76,175,80,0.25);
+  background: linear-gradient(180deg, #fff 0%, #f4faf2 100%);
 }
 
 .reason-card:hover::before { transform: scaleX(1); }
 
-/* Stylized Gold Icons within cards */
 .reason-icon-box {
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #FDF7F8, #F7E9BE);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #D4AF37;
+  background: linear-gradient(135deg, var(--soft-green-bg), #d4edda);
+  color: var(--dark-green);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   margin-bottom: 20px;
   transition: var(--transition);
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 4px 14px rgba(76,175,80,0.16);
 }
 
 .reason-card:hover .reason-icon-box {
-  background: linear-gradient(135deg, #6B1D2F, #4A121F);
-  color: #D4AF37;
+  background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+  color: #fff;
   transform: scale(1.08) rotate(-3deg);
-  box-shadow: 0 8px 24px rgba(107, 29, 47, 0.35), 0 0 15px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 24px rgba(46,125,50,0.3);
 }
 
 /* Package Card images */
@@ -1173,19 +1121,17 @@ nav.navbar-custom .navbar-brand .brand-sub {
    14. CTA SECTIONS
    ────────────────────────────────────────────────────────── */
 .cta-premium {
-  background: linear-gradient(135deg, #4A121F 0%, #6B1D2F 50%, #581726 100%);
+  background: linear-gradient(135deg, var(--deep-forest) 0%, #1e4d30 50%, var(--dark-green) 100%);
   position: relative;
   overflow: hidden;
-  border-top: 2px solid #D4AF37;
-  border-bottom: 2px solid #D4AF37;
 }
 
 .cta-premium::before {
   content: '';
   position: absolute;
   top: -80px; right: -80px;
-  width: 450px; height: 450px;
-  background: radial-gradient(circle, rgba(212,175,55,0.20) 0%, transparent 65%);
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,193,7,0.08) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -1193,17 +1139,17 @@ nav.navbar-custom .navbar-brand .brand-sub {
   content: '';
   position: absolute;
   bottom: -60px; left: -60px;
-  width: 350px; height: 350px;
-  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 65%);
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(76,175,80,0.12) 0%, transparent 65%);
   pointer-events: none;
 }
 
 /* ──────────────────────────────────────────────────────────
-   15. FOOTER – Solid Deep Maroon (#6B1D2F) & Gold (#D4AF37)
+   15. FOOTER – Premium
    ────────────────────────────────────────────────────────── */
 .footer-custom {
-  background: linear-gradient(180deg, #4A121F 0%, #6B1D2F 100%) !important;
-  color: #FFFFFF !important;
+  background: linear-gradient(180deg, #142a1e 0%, var(--deep-forest) 100%) !important;
+  color: rgba(255,255,255,0.82) !important;
   padding: 72px 0 28px;
   font-size: 0.91rem;
   position: relative;
@@ -1214,14 +1160,14 @@ nav.navbar-custom .navbar-brand .brand-sub {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #D4AF37, #F4C430, #D4AF37);
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-amber), var(--primary-green));
 }
 
 .footer-brand {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  color: #FFFFFF !important;
+  color: #fff !important;
   margin-bottom: 14px;
   display: flex;
   align-items: center;
@@ -1229,16 +1175,16 @@ nav.navbar-custom .navbar-brand .brand-sub {
 }
 
 .footer-brand i {
-  color: #D4AF37 !important;
-  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.5));
+  color: var(--primary-green);
+  filter: drop-shadow(0 2px 6px rgba(76,175,80,0.4));
 }
 
 .footer-custom h5, .footer-custom h6 {
-  color: #D4AF37 !important;
+  color: var(--accent-amber) !important;
   font-weight: 700;
   margin-bottom: 20px;
-  font-size: 0.98rem;
-  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
 }
 
